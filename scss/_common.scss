@@ -5,6 +5,13 @@
     border: toRem(2) solid $yellowColor;
     padding: toRem(20) toRem(57);
     color: $yellowColor;
+    transition: all 0.3s;
+    @media (any-hover) {
+        &:hover {
+            background-color: $yellowColor;
+            color: $darkColor;
+        }
+    }
 
     &--yellow {
         background-color: $yellowColor;
