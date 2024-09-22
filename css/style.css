@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300;400;700&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  line-height: 1;
+  height: 100%;
+}
+
+/* FORM */
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+address {
+  font-style: normal;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  letter-spacing: 0.0125rem;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+[class$=__container] {
+  max-width: 85.625rem;
+  padding-inline: 0.625rem;
+  margin: 0 auto;
+}
+
+.btn-link {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  font-size: 1.375rem;
+  text-align: center;
+  border: 0.125rem solid #E1B168;
+  padding: 1.25rem 3.5625rem;
+  color: #E1B168;
+}
+.btn-link--yellow {
+  background-color: #E1B168;
+  color: #292E36;
+}
+
+.logo {
+  width: 23.625rem;
+  height: 11.75rem;
+}
+.logo__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  aspect-ratio: 378/188;
+}
+
+.header {
+  background-color: #292E36;
+}
+.header__top {
+  padding-block: 3.125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.9375rem;
+}
+.header__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.3125rem 1.875rem;
+}
+.header__phone-link {
+  color: #fff;
+}
+
+.navigation {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding-block: 1.25rem;
+  color: #fff;
+  text-transform: capitalize;
+}
+.navigation__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.25rem 3.75rem;
+}
+.navigation__link {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media (any-hover) {
+  .navigation__link:hover {
+    color: #E1B168;
+  }
+}
+
+.social {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.25rem;
+}
+.social__link {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+@media (any-hover) {
+  .social__link:hover .social__icon {
+    -webkit-filter: invert(73%) sepia(15%) saturate(1104%) hue-rotate(357deg) brightness(96%) contrast(94%);
+            filter: invert(73%) sepia(15%) saturate(1104%) hue-rotate(357deg) brightness(96%) contrast(94%);
+  }
+}
+.social__icon {
+  width: 100%;
+  height: 100%;
+  -webkit-filter: invert(100%) sepia(6%) saturate(791%) hue-rotate(165deg) brightness(119%) contrast(100%);
+          filter: invert(100%) sepia(6%) saturate(791%) hue-rotate(165deg) brightness(119%) contrast(100%);
+  -webkit-transition: -webkit-filter 0.3s;
+  transition: -webkit-filter 0.3s;
+  transition: filter 0.3s;
+  transition: filter 0.3s, -webkit-filter 0.3s;
+}

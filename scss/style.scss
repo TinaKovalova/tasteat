@@ -1,0 +1,33 @@
+@use "sass:math";
+@import "fonts";
+@import "reset";
+@import "variables";
+@import "mixins";
+
+body {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+    font-size: toRem(20);
+    line-height: 1.5;
+    letter-spacing: toRem(0.2);
+}
+.wrapper {
+    min-height: 100%;
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+.wrapper > main {
+    flex-grow: 1;
+}
+
+[class$="__container"] {
+    max-width: toRem($containerWidth);
+    padding-inline: toRem(10);
+    margin: 0 auto;
+}
+@import "common";
+@import "header";
+@import "main";
+@import "footer";
