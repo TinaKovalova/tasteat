@@ -122,18 +122,22 @@ body {
   border: 0.125rem solid #e1b168;
   padding: 1.25rem 3.5625rem;
   color: #e1b168;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.btn-link--yellow {
+  background-color: #e1b168;
+  color: #292e36;
 }
 @media (any-hover) {
   .btn-link:hover {
     background-color: #e1b168;
     color: #292e36;
   }
-}
-.btn-link--yellow {
-  background-color: #e1b168;
-  color: #292e36;
+  .btn-link--yellow:hover {
+    color: #e1b168;
+    background-color: transparent;
+  }
 }
 
 .logo {
@@ -395,4 +399,78 @@ body {
   aspect-ratio: 595/740;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.contacts__container {
+  padding-block: 6.25rem 3.75rem;
+}
+.contacts__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.5625rem 0.3125rem;
+}
+.contacts__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 27.6875rem;
+          flex: 0 1 27.6875rem;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+.contacts__item:has(.contacts__link:hover) .contacts__link-icon-block {
+  background-color: #e1b168;
+}
+.contacts__item:has(.contacts__link:hover) .contacts__item-text {
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
+}
+.contacts__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+}
+.contacts__link-icon-block {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 5.1875rem;
+  height: 5.1875rem;
+  border-radius: 50%;
+  background-color: #292e36;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.contacts__icon {
+  max-width: 100%;
+  max-height: 100%;
+}
+.contacts__item-text {
+  -webkit-padding-end: 0.9375rem;
+          padding-inline-end: 0.9375rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.contacts__item-title {
+  font-family: "Cormorant Infant", serif;
+  font-size: 1.875rem;
+  line-height: 1.3;
 }

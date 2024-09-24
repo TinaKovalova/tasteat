@@ -5,17 +5,21 @@
     border: toRem(2) solid $yellowColor;
     padding: toRem(20) toRem(57);
     color: $yellowColor;
-    transition: all 0.3s;
+    transition: all 0.5s;
+
+    &--yellow {
+        background-color: $yellowColor;
+        color: $darkColor;
+    }
     @media (any-hover) {
         &:hover {
             background-color: $yellowColor;
             color: $darkColor;
         }
-    }
-
-    &--yellow {
-        background-color: $yellowColor;
-        color: $darkColor;
+        &--yellow:hover {
+            color: $yellowColor;
+            background-color: transparent;
+        }
     }
 }
 .logo {

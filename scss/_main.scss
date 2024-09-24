@@ -123,3 +123,77 @@
         object-fit: cover;
     }
 }
+.contacts {
+    // .contacts__container
+
+    &__container {
+        padding-block: toRem(100) toRem(60);
+    }
+
+    // .contacts__list
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: toRem(25) toRem(5);
+    }
+
+    // .contacts__item
+
+    &__item {
+        flex: 0 1 toRem(443);
+        min-width: max-content;
+        &:has(.contacts__link:hover) {
+            .contacts__link-icon-block {
+                background-color: $yellowColor;
+            }
+            .contacts__item-text {
+                text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
+            }
+        }
+    }
+
+    // .contacts__link
+
+    &__link {
+        display: flex;
+        align-items: center;
+        column-gap: toRem(20);
+    }
+
+    //__link-icon-block
+    &__link-icon-block {
+        flex-shrink: 0;
+        width: toRem(83);
+        height: toRem(83);
+        border-radius: 50%;
+        background-color: $darkColor;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s;
+    }
+
+    // .contacts__icon
+
+    &__icon {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    // .contacts__item-text
+
+    &__item-text {
+        padding-inline-end: toRem(15);
+        transition: all 0.5s;
+    }
+
+    // .contacts__item-title
+
+    &__item-title {
+        font-family: "Cormorant Infant", serif;
+        font-size: toRem(30);
+        line-height: 1.3;
+    }
+}
