@@ -1,22 +1,36 @@
 .hero {
-    padding-block-start: toRem(40);
+    padding-block-start: toRem(10);
     background-color: $darkColor;
+    overflow: hidden;
 
     // .hero__container
 
     &__container {
         display: flex;
         justify-content: space-between;
-        // flex-wrap: wrap;
-        gap: toRem(89);
+
+        gap: toRem(89) toRem(5);
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 
     // .hero__content
 
     &__content {
         color: #fff;
+        display: flex;
+        align-items: center;
+        padding-block-start: toRem(34);
+        flex: 1 1 toPercent(655, $maxWidthContainer);
+        @media (max-width: $mobile) {
+            justify-content: center;
+        }
+    }
+    // hero__content-body
+    &__content-body {
         flex: 0 1 toRem(616);
-        padding-inline-end: toRem(39);
         & > *:not(:last-child) {
             margin-bottom: toRem(26);
         }
@@ -26,7 +40,7 @@
 
     &__title {
         font-family: "Cormorant Infant", serif;
-        font-size: toRem(100);
+        @include adaptiveValue("font-size", 100, 50);
         line-height: 1.1;
     }
 
@@ -45,10 +59,14 @@
     // .hero__image-block
 
     &__image-block {
-        // width: toPercent(655, $containerWidth);
-
-        aspect-ratio: 655 / 770;
+        width: toPercent(715, $maxWidthContainer);
+        aspect-ratio: 715 / 800;
         position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        transform: translateX(toPercent(30, 715));
+
         &::after,
         &::before {
             content: "";
@@ -56,24 +74,29 @@
             bottom: 0;
             background-color: rgba(255, 255, 255, 0.1);
         }
-        &::after {
-            width: toPercent(715, 655);
+        &::before {
+            width: toPercent(655, 715);
             height: 100%;
             left: 50%;
             transform: translateX(-50%);
         }
-        &::before {
+        &::after {
             width: 100%;
-            height: toPercent(800, 770);
+            height: toPercent(770, 800);
             left: 0;
+        }
+        @media (max-width: toRem(1380)) {
+            transform: translateX(toPercent(10, 715));
         }
     }
 
     // .hero__img-wrapper
 
     &__img-wrapper {
+        width: toPercent(655, 715);
+        height: toPercent(770, 800);
+
         padding: toRem(30) toRem(30) 0;
-        height: 100%;
         position: relative;
         background-color: $darkColor;
         z-index: 2;
@@ -94,7 +117,9 @@
     &__image {
         border-radius: toRem(626) toRem(626) 0px 0px;
         width: 100%;
+
         height: 100%;
-        aspect-ratio: 655 /770;
+        aspect-ratio: 595 /740;
+        object-fit: cover;
     }
 }
