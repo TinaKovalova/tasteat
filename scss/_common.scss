@@ -34,3 +34,51 @@
         flex-basis: toRem(192);
     }
 }
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: toRem(8);
+
+    // .section-header__lables
+
+    &__lables {
+        color: $darkColor;
+        font-size: toRem(15);
+        letter-spacing: toRem(3);
+        text-transform: uppercase;
+
+        &:not(:last-child) {
+            margin-bottom: toRem(5);
+        }
+    }
+
+    // .section-header__label
+
+    &__label {
+        padding: toRem(4) toRem(0.5) 0;
+        text-align: center;
+        vertical-align: middle;
+        border-top: toRem(1) solid $yellowColor;
+        border-bottom: toRem(1) solid $yellowColor;
+    }
+
+    // .section-header__title
+
+    &__title {
+        font-family: "Cormorant Infant", serif;
+        color: $darkColor;
+        font-size: toRem(40);
+        line-height: 1.4;
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    // .section-header__text
+
+    &__text {
+        color: $grayColor;
+    }
+}
