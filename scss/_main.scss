@@ -292,11 +292,15 @@
 .periods {
     display: flex;
     gap: toRem(24);
+    @media (max-width: $mobile) {
+        flex-wrap: wrap;
+    }
 
     // .periods__item
 
     &__item {
         flex: 1 1 toPercent(274, 572);
+        min-width: toRem(220);
         & > *:not(:last-child) {
             margin-bottom: toRem(15);
         }

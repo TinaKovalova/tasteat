@@ -602,10 +602,17 @@ body {
   display: flex;
   gap: 1.5rem;
 }
+@media (max-width: 767.98px) {
+  .periods {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
 .periods__item {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 47.9020979021%;
           flex: 1 1 47.9020979021%;
+  min-width: 13.75rem;
 }
 .periods__item > *:not(:last-child) {
   margin-bottom: 0.9375rem;
