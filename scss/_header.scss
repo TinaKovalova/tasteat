@@ -13,7 +13,7 @@
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        gap: toRem(15);
+        gap: toRem(10);
     }
 
     // .header__bottom
@@ -26,6 +26,11 @@
     // .header__phone-link
     &__phone-link {
         color: #fff;
+    }
+    .btn-link {
+        @media (max-width: $mobile) {
+            padding: toRem(15);
+        }
     }
 }
 

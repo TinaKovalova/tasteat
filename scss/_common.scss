@@ -19,14 +19,14 @@
     }
 }
 .logo {
-    width: toRem(378);
+    // width: toPercent(378, $maxWidthContainer);
+    flex-basis: toRem(378);
+    // min-width: toRem(192);
     height: toRem(188);
-
-    // min-width: toRem(278);
-    &__image {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        aspect-ratio: 378 / 188;
+    flex-shrink: 1;
+    overflow: hidden;
+    background: url("../img/logo.svg") center / cover no-repeat;
+    @media (max-width: $tablet) {
+        flex-basis: toRem(192);
     }
 }
