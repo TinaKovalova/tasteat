@@ -460,35 +460,46 @@ body {
   gap: 1.5625rem 0.3125rem;
 }
 .contacts__item {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 27.6875rem;
-          flex: 0 1 27.6875rem;
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
-}
-.contacts__item:has(.contacts__link:hover) .contacts__link-icon-block {
-  background-color: #e1b168;
-}
-.contacts__item:has(.contacts__link:hover) .contacts__item-text {
-  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
-}
-.contacts__link {
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  width: 32.5735294118%;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-column-gap: 1.25rem;
      -moz-column-gap: 1.25rem;
           column-gap: 1.25rem;
+  -webkit-padding-end: 0.9375rem;
+          padding-inline-end: 0.9375rem;
+}
+@media (max-width: 767.98px) {
+  .contacts__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+}
+.contacts__link {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+@media (any-hover) {
+  .contacts__link:hover {
+    color: #e1b168;
+  }
 }
 .contacts__link-icon-block {
+  -ms-flex-item-align: center;
+      align-self: center;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  width: 5.1875rem;
-  height: 5.1875rem;
   border-radius: 50%;
   background-color: #292e36;
   display: -webkit-box;
@@ -500,18 +511,63 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+}
+@media (min-width: 86.25em) {
+  .contacts__link-icon-block {
+    width: 5.1875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 86.25em) {
+  @supports (width: clamp( 3.125rem , 2.5023584906rem  +  3.1132075472vw , 5.1875rem )) {
+    .contacts__link-icon-block {
+      width: clamp( 3.125rem , 2.5023584906rem  +  3.1132075472vw , 5.1875rem );
+    }
+  }
+  @supports not (width: clamp( 3.125rem , 2.5023584906rem  +  3.1132075472vw , 5.1875rem )) {
+    .contacts__link-icon-block {
+      width: calc(3.125rem + 2.0625 * (100vw - 20rem) / 66.25);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .contacts__link-icon-block {
+    width: 3.125rem;
+  }
+}
+@media (min-width: 86.25em) {
+  .contacts__link-icon-block {
+    height: 5.1875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 86.25em) {
+  @supports (height: clamp( 3.125rem , 2.5023584906rem  +  3.1132075472vw , 5.1875rem )) {
+    .contacts__link-icon-block {
+      height: clamp( 3.125rem , 2.5023584906rem  +  3.1132075472vw , 5.1875rem );
+    }
+  }
+  @supports not (height: clamp( 3.125rem , 2.5023584906rem  +  3.1132075472vw , 5.1875rem )) {
+    .contacts__link-icon-block {
+      height: calc(3.125rem + 2.0625 * (100vw - 20rem) / 66.25);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .contacts__link-icon-block {
+    height: 3.125rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .contacts__link-icon-block {
+    -ms-flex-item-align: auto;
+        align-self: auto;
+  }
 }
 .contacts__icon {
   max-width: 100%;
   max-height: 100%;
-}
-.contacts__item-text {
-  -webkit-padding-end: 0.9375rem;
-          padding-inline-end: 0.9375rem;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  aspect-ratio: 83/83;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .contacts__item-title {
   font-family: "Cormorant Infant", serif;

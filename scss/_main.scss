@@ -142,37 +142,43 @@
     // .contacts__item
 
     &__item {
-        flex: 0 1 toRem(443);
-        min-width: max-content;
-        &:has(.contacts__link:hover) {
-            .contacts__link-icon-block {
-                background-color: $yellowColor;
-            }
-            .contacts__item-text {
-                text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
-            }
+        flex-shrink: 1;
+        width: toPercent(443, $maxWidthContainer);
+        min-width: fit-content;
+        display: flex;
+        column-gap: toRem(20);
+        padding-inline-end: toRem(15);
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            flex-grow: 1;
         }
     }
 
     // .contacts__link
 
     &__link {
-        display: flex;
-        align-items: center;
-        column-gap: toRem(20);
+        transition: color 0.3s;
+        @media (any-hover) {
+            &:hover {
+                color: $yellowColor;
+            }
+        }
     }
 
     //__link-icon-block
     &__link-icon-block {
+        align-self: center;
         flex-shrink: 0;
-        width: toRem(83);
-        height: toRem(83);
+        @include adaptiveValue("width", 83, 50);
+        @include adaptiveValue("height", 83, 50);
         border-radius: 50%;
         background-color: $darkColor;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all 0.5s;
+        @media (max-width: $mobile) {
+            align-self: auto;
+        }
     }
 
     // .contacts__icon
@@ -180,13 +186,13 @@
     &__icon {
         max-width: 100%;
         max-height: 100%;
+        aspect-ratio: 83 / 83;
+        object-fit: contain;
     }
 
     // .contacts__item-text
 
     &__item-text {
-        padding-inline-end: toRem(15);
-        transition: all 0.5s;
     }
 
     // .contacts__item-title
