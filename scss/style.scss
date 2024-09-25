@@ -10,6 +10,7 @@ body {
     font-size: toRem(20);
     line-height: 1.5;
     letter-spacing: toRem(0.2);
+    color: $grayColor;
 }
 .wrapper {
     min-height: 100%;

@@ -73,12 +73,10 @@
         font-size: toRem(40);
         line-height: 1.4;
         text-transform: capitalize;
-        text-align: center;
     }
 
     // .section-header__text
 
     &__text {
-        color: $grayColor;
     }
 }

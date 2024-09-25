@@ -322,7 +322,6 @@
     // .periods__text
 
     &__text {
-        color: $grayColor;
     }
 }
 .sing {
@@ -334,7 +333,6 @@
     // .sing__name
 
     &__name {
-        color: $grayColor;
         text-transform: uppercase;
     }
 
@@ -345,5 +343,175 @@
         aspect-ratio: 200 / 111;
         mask: url("../img/sign.svg") center / contain no-repeat;
         background-color: $darkColor;
+    }
+}
+
+// menu-------------------------------
+.menu {
+    padding-block: toRem(140);
+    // .menu__container
+
+    &__container {
+        display: flex;
+        gap: toRem(50);
+        @media (max-width: $tablet) {
+            flex-direction: column;
+        }
+    }
+    //.menu__preview
+    &__preview {
+        flex: 0 2 toRem(491);
+        min-width: toRem(300);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: toRem(45);
+        @media (max-width: $tablet) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex-basis: auto;
+        }
+    }
+
+    // .menu__image-block
+
+    &__image-block {
+        width: toPercent(398, 491);
+        &:not(:last-child) {
+            margin-bottom: toRem(15);
+        }
+        @media (max-width: $tablet) {
+            width: toPercent(230, 491);
+        }
+        @media (max-width: $mobile) {
+            display: none;
+        }
+    }
+    //.menu__image
+    &__image {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 398 / 548;
+        object-fit: cover;
+        @media (max-width: $tablet) {
+            aspect-ratio: 548 / 398;
+        }
+    }
+
+    // .menu__details
+
+    &__details {
+        flex-grow: 1;
+        padding-block: toRem(35);
+    }
+    //menu__details-block
+    &__details-block {
+        min-height: toRem(50.4);
+        transition: min-height 0.8s ease-in-out;
+        &[open] {
+            min-height: toRem(635);
+        }
+        &:not(:last-child) {
+            margin-bottom: toRem(15);
+        }
+    }
+    //menu__details-block-title
+    &__details-block-title {
+        font-family: "Cormorant Infant", serif;
+        color: $darkColor;
+        font-size: toRem(36);
+        line-height: 1.4;
+        list-style-type: none;
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+    .btn-link {
+    }
+    & .section-header {
+        align-items: flex-start;
+    }
+}
+
+.menu-list {
+    padding-block: toRem(40) toRem(60);
+    // .menu-list__item
+
+    &__item:not(:last-child) {
+        margin-bottom: toRem(50);
+    }
+}
+.meal {
+    // .meal__link
+
+    &__link {
+        width: 100%;
+        display: flex;
+        gap: toRem(20);
+        align-items: center;
+    }
+
+    // .meal__image-block
+
+    &__image-block {
+        @include adaptiveValue("width", 84, 50);
+        @include adaptiveValue("height", 84, 50);
+        flex-shrink: 0;
+        border-radius: 50%;
+        background-color: $grayColor;
+        @media (max-width: $mobile) {
+            display: none;
+        }
+    }
+
+    // .meal__img
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    // .meal__info
+
+    &__info {
+        display: flex;
+        flex-grow: 1;
+        gap: toRem(10);
+    }
+
+    // .meal__details
+
+    &__details {
+    }
+    // .meal__title
+
+    &__title {
+        font-family: "Cormorant Infant", serif;
+        font-size: toRem(30);
+        line-height: 1.4;
+        color: $darkColor;
+    }
+
+    // .meal__ingredients
+
+    &__ingredients {
+    }
+
+    // .meal__price
+
+    &__price {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: flex-end;
+        gap: toRem(10);
+        padding-block-end: toRem(13);
+        &::before {
+            content: "";
+            height: toRem(2);
+            background-color: #aaaaaa;
+            flex: 1 1 auto;
+        }
+        @extend .meal__title;
     }
 }
