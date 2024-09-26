@@ -407,10 +407,17 @@
     //menu__details-block
     &__details-block {
         min-height: toRem(50.4);
-        transition: min-height 0.8s ease-in-out;
+        overflow: hidden;
+        transition: all 0.8s ease-in-out;
         &[open] {
             min-height: toRem(635);
         }
+        &:not([open]) {
+        }
+        &[open] .menu-list {
+            // transform: translateY(-100%);
+        }
+
         &:not(:last-child) {
             margin-bottom: toRem(15);
         }
@@ -435,6 +442,10 @@
 
 .menu-list {
     padding-block: toRem(40) toRem(60);
+    // min-height: max-content;
+    // transform: translateY(-100%);
+    z-index: 0;
+    transition: transform 0.5s;
     // .menu-list__item
 
     &__item:not(:last-child) {

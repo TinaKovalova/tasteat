@@ -1,5 +1,24 @@
 .header {
     background-color: $darkColor;
+    // position: relative;
+
+    position: relative;
+
+    @media (max-width: $tablet) {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background-color: $darkColor;
+    }
     // .header__container
 
     &__container {
@@ -14,6 +33,8 @@
         justify-content: space-between;
         flex-wrap: wrap;
         gap: toRem(10);
+        position: relative;
+        z-index: 3;
     }
 
     // .header__bottom
@@ -92,5 +113,25 @@
         height: 100%;
         filter: invert(100%) sepia(6%) saturate(791%) hue-rotate(165deg) brightness(119%) contrast(100%);
         transition: filter 0.3s;
+    }
+}
+.burger-menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background-color: $darkColor;
+    z-index: 1;
+    transform: translateY(-100%);
+    transition: all 0.5s ease-in-out;
+    &--active {
+        transform: translateY(0);
+    }
+    & .header__bottom,
+    & .navigation__list {
+        flex-direction: column;
+    }
+    & .social {
+        margin-left: 0;
     }
 }

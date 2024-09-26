@@ -11,6 +11,9 @@ body {
     line-height: 1.5;
     letter-spacing: toRem(0.2);
     color: $grayColor;
+    &:has(.burger-menu--active) {
+        overflow: hidden;
+    }
 }
 .wrapper {
     min-height: 100%;
