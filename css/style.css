@@ -143,6 +143,16 @@ body:has(.burger-menu--active) {
     background-color: transparent;
   }
 }
+@media (max-width: 991.98px) {
+  .btn-link {
+    padding: 0.625rem 1.875rem;
+  }
+}
+@media (max-width: 479.98px) {
+  .btn-link {
+    width: 100%;
+  }
+}
 
 .logo {
   -webkit-box-flex: 0;
@@ -164,6 +174,13 @@ body:has(.burger-menu--active) {
     min-width: 7.8125rem;
     height: 7.8125rem;
     margin-right: auto;
+  }
+}
+@media (max-width: 479.98px) {
+  .logo {
+    max-width: 6.25rem;
+    min-width: 6.25rem;
+    height: 6.25rem;
   }
 }
 
@@ -289,6 +306,77 @@ body:has(.burger-menu--active) {
   }
 }
 
+.review-card {
+  padding-inline: 2.5rem;
+  background-color: #343942;
+}
+@media (max-width: 767.98px) {
+  .review-card {
+    padding-inline: 0.9375rem;
+  }
+}
+.review-card__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.875rem;
+}
+@media (max-width: 767.98px) {
+  .review-card__header {
+    gap: 0.9375rem;
+  }
+}
+@media (max-width: 479.98px) {
+  .review-card__header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.review-card__image-block {
+  width: 7.0625rem;
+  height: 7.0625rem;
+  border-radius: 50%;
+  position: relative;
+}
+.review-card__image-block::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 50%;
+  border: 0.125rem solid #292e36;
+  background: url("../img/icons/backtick.svg") center/50% 40% no-repeat, #e1b168;
+}
+.review-card__reviewer-data {
+  text-transform: capitalize;
+}
+.review-card__reviewer-name {
+  font-family: "Cormorant Infant", serif;
+  font-size: 1.875rem;
+  line-height: 1.4;
+}
+.review-card__reviewer-city {
+  color: #e1b168;
+}
+.review-card__review {
+  font-family: "Cormorant Infant", serif;
+  font-size: 1.5rem;
+  line-height: 1.563;
+}
+.review-card__review:not(:first-child)::before, .review-card__review:not(:last-child)::after {
+  content: "";
+  width: 100%;
+  height: 0.0625rem;
+  background-color: #797e89;
+  margin-block: 1.9375rem 2.0625rem;
+}
+
 .header {
   background-color: #292e36;
   position: relative;
@@ -298,6 +386,11 @@ body:has(.burger-menu--active) {
     position: sticky;
     top: 0;
     z-index: 50;
+  }
+}
+@media (min-width: 991.98px) {
+  .header__top {
+    border-bottom: 0.0625rem solid #5c6168;
   }
 }
 .header__top-container {
@@ -330,6 +423,11 @@ body:has(.burger-menu--active) {
 @media (max-width: 991.98px) {
   .header__top-container {
     padding-block: 1.25rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .header__top-container {
+    padding-block: 0.625rem;
   }
 }
 .header__bottom-container {
@@ -509,7 +607,7 @@ body:has(.burger-menu--active) {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 5.5625rem 0.3125rem;
+  gap: 2rem 0.3125rem;
 }
 @media (max-width: 767.98px) {
   .hero__container {
@@ -583,6 +681,7 @@ body:has(.burger-menu--active) {
 }
 .hero__image-block {
   width: 52.5735294118%;
+  min-width: 17.5rem;
   aspect-ratio: 715/800;
   position: relative;
   display: -webkit-box;
@@ -920,7 +1019,7 @@ body:has(.burger-menu--active) {
   -webkit-box-flex: 0;
       -ms-flex: 0 2 30.6875rem;
           flex: 0 2 30.6875rem;
-  min-width: 18.75rem;
+  min-width: 17.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1126,4 +1225,59 @@ body:has(.burger-menu--active) {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+}
+
+.testimonial {
+  padding-block: 8.8125rem 7.5rem;
+  background-color: #292e36;
+  color: #fff;
+}
+.testimonial__container {
+  color: #fff;
+}
+.testimonial__container > *:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+.testimonial .section-header > * {
+  color: #fff;
+}
+.testimonial .section-header {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.swiper {
+  width: 100vw;
+}
+@media (max-width: 767.98px) {
+  .swiper {
+    width: 100%;
+  }
+}
+
+.swiper-wrapper {
+  padding-block: 2.5rem 2.75rem;
+  margin-bottom: 1.875rem;
+}
+
+.swiper .swiper-slide {
+  width: 34rem;
+}
+@media (max-width: 767.98px) {
+  .swiper .swiper-slide {
+    width: 17.5rem;
+  }
+}
+
+.swiper .swiper-pagination {
+  position: relative;
+}
+
+.swiper .swiper-pagination-bullet {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.swiper .swiper-pagination-bullet .swiper-pagination-bullet-active {
+  background-color: #fff;
 }

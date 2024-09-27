@@ -9,7 +9,7 @@
         display: flex;
         justify-content: space-between;
 
-        gap: toRem(89) toRem(5);
+        gap: toRem(32) toRem(5);
         @media (max-width: $mobile) {
             flex-wrap: wrap;
             justify-content: center;
@@ -60,6 +60,7 @@
 
     &__image-block {
         width: toPercent(715, $maxWidthContainer);
+        min-width: toRem(280);
         aspect-ratio: 715 / 800;
         position: relative;
         display: flex;
@@ -361,7 +362,7 @@
     //.menu__preview
     &__preview {
         flex: 0 2 toRem(491);
-        min-width: toRem(300);
+        min-width: toRem(280);
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -524,5 +525,114 @@
             flex: 1 1 auto;
         }
         @extend .meal__title;
+    }
+}
+.testimonial {
+    padding-block: toRem(141) toRem(120);
+    background-color: $darkColor;
+    color: #fff;
+    // .testimonial__container
+
+    &__container {
+        color: #fff;
+        & > *:not(:last-child) {
+            margin-bottom: toRem(40);
+        }
+    }
+    & .section-header > * {
+        color: #fff;
+    }
+    & .section-header {
+        align-items: flex-start;
+    }
+
+    // .testimonial__swiper
+
+    &__swiper {
+    }
+}
+// .section-header {
+//     // .section-header__lables
+
+//     // .section-header__label
+
+//     &__label {
+//     }
+
+//     // .section-header__title
+
+//     &__title {
+//     }
+
+//     // .section-header__text
+
+//     &__text {
+//     }
+// }
+
+.review-card {
+    // .review-card__header
+
+    &__header {
+    }
+
+    // .review-card__image-block
+
+    &__image-block {
+    }
+
+    // .review-card__image
+
+    &__image {
+    }
+
+    // .review-card__reviewer-data
+
+    &__reviewer-data {
+    }
+
+    // .review-card__reviewer-name
+
+    &__reviewer-name {
+    }
+
+    // .review-card__reviewer-city
+
+    &__reviewer-city {
+    }
+
+    // .review-card__review
+
+    &__review {
+    }
+}
+
+.swiper {
+    width: 100vw;
+    @media (max-width: $mobile) {
+        width: 100%;
+    }
+}
+.swiper-wrapper {
+    padding-block: toRem(40) toRem(44);
+    margin-bottom: toRem(30);
+}
+.swiper .swiper-slide {
+    width: toRem(544);
+    @media (max-width: $mobile) {
+        width: toRem(280);
+    }
+}
+.swiper .swiper-pagination {
+    position: relative;
+}
+.swiper-scrollbar {
+}
+.swiper .swiper-pagination-bullet {
+    width: toRem(20);
+    height: toRem(20);
+    background-color: rgba(255, 255, 255, 0.4);
+    & .swiper-pagination-bullet-active {
+        background-color: #fff;
     }
 }

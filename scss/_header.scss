@@ -9,6 +9,12 @@
         top: 0;
         z-index: 50;
     }
+    // .header__top
+    &__top {
+        @media (min-width: $tablet) {
+            border-bottom: toRem(1) solid #5c6168;
+        }
+    }
 
     // .header__container
 
@@ -16,8 +22,6 @@
     &__top-container {
         @extend [class$="__container"];
     }
-
-    // .header__top
 
     &__top-container {
         padding-block: toRem(50);
@@ -40,6 +44,9 @@
         }
         @media (max-width: $tablet) {
             padding-block: toRem(20);
+        }
+        @media (max-width: $mobile) {
+            padding-block: toRem(10);
         }
     }
 

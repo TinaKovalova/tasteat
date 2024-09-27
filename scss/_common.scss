@@ -21,6 +21,12 @@
             background-color: transparent;
         }
     }
+    @media (max-width: $tablet) {
+        padding: toRem(10) toRem(30);
+    }
+    @media (max-width: $smallMobile) {
+        width: 100%;
+    }
 }
 .logo {
     flex: 0 1 toPercent(378, $maxWidthContainer);
@@ -38,6 +44,11 @@
         min-width: toRem(125);
         height: toRem(125);
         margin-right: auto;
+    }
+    @media (max-width: $smallMobile) {
+        max-width: toRem(100);
+        min-width: toRem(100);
+        height: toRem(100);
     }
 }
 
@@ -144,5 +155,90 @@
     }
     @media (max-width: $tablet) {
         display: flex;
+    }
+}
+.review-card {
+    padding-inline: toRem(40);
+    background-color: #343942;
+    @media (max-width: $mobile) {
+        padding-inline: toRem(15);
+    }
+
+    // .review-card__header
+
+    &__header {
+        display: flex;
+        flex-wrap: wrap;
+        gap: toRem(30);
+        @media (max-width: $mobile) {
+            // flex-direction: column;
+            gap: toRem(15);
+        }
+        @media (max-width: $smallMobile) {
+            flex-direction: column;
+        }
+    }
+
+    // .review-card__image-block
+
+    &__image-block {
+        width: toRem(113);
+        height: toRem(113);
+        border-radius: 50%;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: toRem(30);
+            height: toRem(30);
+            border-radius: 50%;
+            border: toRem(2) solid #292e36;
+            background:
+                url("../img/icons/backtick.svg") center/ 50% 40% no-repeat,
+                $yellowColor;
+        }
+    }
+
+    // .review-card__image
+
+    &__image {
+    }
+
+    // .review-card__reviewer-data
+
+    &__reviewer-data {
+        text-transform: capitalize;
+    }
+
+    // .review-card__reviewer-name
+
+    &__reviewer-name {
+        font-family: "Cormorant Infant", serif;
+        font-size: toRem(30);
+        line-height: 1.4;
+    }
+
+    // .review-card__reviewer-city
+
+    &__reviewer-city {
+        color: $yellowColor;
+    }
+
+    // .review-card__review
+
+    &__review {
+        font-family: "Cormorant Infant", serif;
+        font-size: toRem(24);
+        line-height: 1.563;
+        &:not(:first-child)::before,
+        &:not(:last-child)::after {
+            content: "";
+            width: 100%;
+            height: toRem(1);
+            background-color: #797e89;
+            margin-block: toRem(31) toRem(33);
+        }
     }
 }
