@@ -207,6 +207,7 @@
 
 .story {
     padding-block: toRem(60) toRem(100);
+    background-color: #fff8f5;
     position: relative;
     // .story__container
 
@@ -227,7 +228,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            z-index: -2;
+            z-index: 0;
 
             &::after {
                 content: "";
@@ -349,7 +350,7 @@
 
 // menu-------------------------------
 .menu {
-    padding-block: toRem(140);
+    @include adaptiveValue("padding-block", 141, 50);
     // .menu__container
 
     &__container {
@@ -528,7 +529,8 @@
     }
 }
 .testimonial {
-    padding-block: toRem(141) toRem(120);
+    @include adaptiveValue("padding-block-start", 141, 50);
+    @include adaptiveValue("padding-block-end", 120, 50);
     background-color: $darkColor;
     color: #fff;
     // .testimonial__container
@@ -551,24 +553,6 @@
     &__swiper {
     }
 }
-// .section-header {
-//     // .section-header__lables
-
-//     // .section-header__label
-
-//     &__label {
-//     }
-
-//     // .section-header__title
-
-//     &__title {
-//     }
-
-//     // .section-header__text
-
-//     &__text {
-//     }
-// }
 
 .review-card {
     // .review-card__header
@@ -607,32 +591,209 @@
     }
 }
 
+//swiper-----------------------------------
+
 .swiper {
     width: 100vw;
     @media (max-width: $mobile) {
         width: 100%;
     }
-}
-.swiper-wrapper {
-    padding-block: toRem(40) toRem(44);
-    margin-bottom: toRem(30);
-}
-.swiper .swiper-slide {
-    width: toRem(544);
-    @media (max-width: $mobile) {
-        width: toRem(280);
+    .swiper-wrapper {
+        padding-block: toRem(40) toRem(44);
+        margin-bottom: toRem(30);
+    }
+    & .swiper-slide {
+        width: toRem(544);
+        @media (max-width: $mobile) {
+            width: toRem(280);
+        }
+    }
+    & .swiper-pagination {
+        position: relative;
+    }
+
+    & .swiper-pagination-bullet {
+        width: toRem(20);
+        height: toRem(20);
+        background-color: rgba(255, 255, 255, 0.4);
+        & .swiper-pagination-bullet-active {
+            background-color: #fff;
+        }
     }
 }
-.swiper .swiper-pagination {
-    position: relative;
+.picture {
+    width: 100%;
+    // @include adaptiveValue("height", 600, 300);
+    // background: url("../img/lights.png") center / cover no-repeat fixed;
+    // position: relative;
+
+    &__img {
+        width: 100%;
+        aspect-ratio: 1440 / 600;
+        object-fit: contain;
+    }
 }
-.swiper-scrollbar {
+.offers {
+    @include adaptiveValue("padding-block-start", 141, 50);
+    // .offers__container
+
+    &__container {
+    }
+
+    // .offers__options
+
+    &__options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: toRem(30) toPercent(30, $maxWidthContainer);
+        @media (max-width: $mobile) {
+            flex-direction: column;
+        }
+    }
+
+    // .offers__product-slot
+
+    &__product-slot {
+    }
+    &__header {
+        width: toPercent(813, $maxWidthContainer);
+        margin: 0 auto;
+        @media (max-width: $mobile) {
+            width: 100%;
+        }
+        &:not(:last-child) {
+            margin-bottom: toRem(40);
+        }
+        & .section-header__text {
+            text-align: center;
+        }
+    }
 }
-.swiper .swiper-pagination-bullet {
-    width: toRem(20);
-    height: toRem(20);
-    background-color: rgba(255, 255, 255, 0.4);
-    & .swiper-pagination-bullet-active {
-        background-color: #fff;
+
+.product-slot {
+    flex: 1 0 toPercent(665, $maxWidthContainer);
+    min-width: toRem(280);
+    min-height: toPercent(409, $maxWidthContainer);
+    background: url("../img/offers/inactive-bg.jpg") center / cover no-repeat;
+    overflow: hidden;
+    transition: background-image 0.3s;
+    @media (any-hover) {
+        &:hover {
+            background-image: url("../img/offers/active-bg.jpg");
+            & .product-slot__price::after {
+                background-color: #fff;
+            }
+            & .product-slot__price {
+                color: $darkColor;
+            }
+        }
+    }
+    // .product-slot__body
+
+    &__body-link {
+        width: 100%;
+        height: 100%;
+        padding: toRem(40);
+        display: flex;
+        position: relative;
+        @media (max-width: $mobile) {
+            padding: toRem(20);
+        }
+    }
+
+    // .product-slot__content
+
+    &__content {
+        flex: 0 0 toRem(278);
+        padding: toRem(27) toRem(24) 0 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: toRem(40);
+        position: relative;
+        z-index: 2;
+    }
+    //product-slot section-header
+    &__header {
+        margin-top: auto;
+        align-items: flex-start;
+        row-gap: toRem(5);
+
+        & .section-header__lables {
+            &:not(:last-child) {
+                margin-bottom: toRem(3);
+            }
+        }
+    }
+
+    // .product-slot__price
+
+    &__price {
+        font-family: "Cormorant Infant", serif;
+        font-size: toRem(60);
+        line-height: 1.1;
+        color: $darkColor;
+        position: relative;
+        color: #fff;
+        transition: color 0.3s;
+        @media (max-width: $mobile) {
+            margin-left: toRem(30);
+        }
+
+        &::after {
+            content: "";
+            width: toRem(167);
+            height: toRem(104);
+            background-color: #40464f;
+            mask: url("../img/offers/inactive-decor.svg") center / contain no-repeat;
+            position: absolute;
+            top: toRem(-7);
+            left: toRem(-40);
+            z-index: 0;
+            transition: background-color 0.3s;
+        }
+        & .product-slot__price-lable {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: toRem(15);
+            letter-spacing: toRem(0.15);
+            text-transform: uppercase;
+            position: absolute;
+            left: 0;
+            top: toRem(-5);
+        }
+        span {
+            position: relative;
+            z-index: 5;
+            display: inline-block;
+            min-width: toRem(80);
+            text-align: center;
+        }
+    }
+
+    // .product-slot__img-block
+
+    &__img-block {
+        align-self: center;
+        width: fit-content;
+
+        width: toPercent(307, 665);
+        position: absolute;
+        padding-inline-end: toRem(40);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    // .product-slot__image
+
+    &__image {
+        object-fit: contain;
+        aspect-ratio: 325 / 274;
+        @media (max-width: $smallMobile) {
+            opacity: 0.6;
+            filter: blur(2px);
+        }
     }
 }
