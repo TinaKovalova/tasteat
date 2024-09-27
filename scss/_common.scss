@@ -86,10 +86,10 @@
     height: toRem(50);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: relative;
-    // transition: justify-content 0.8s 0.5s;
+    transition: justify-content 0.1s 1s;
 
     &::before,
     &::after,
@@ -101,30 +101,40 @@
     &::before,
     &::after {
         content: "";
-        // transition: transform 0.5s;
+        position: absolute;
+        left: 0;
         transition:
-            transform 0.8s,
-            // position 0.8s,
-            justify-content 0.2;
+            transform 0.3s,
+            top 0.2s 0.2s,
+            bottom 0.2s 0.2s;
+    }
+    &::before {
+        top: 0;
+    }
+    &::after {
+        bottom: 0;
     }
     & div {
-        transition: width 0.2s;
+        transition: width 0.2s 0.3s;
     }
 
     &--active {
         justify-content: center;
         & div {
             width: 0;
+            transition: width 0.2s;
         }
         &.burger-btn::before,
         &.burger-btn::after {
-            position: absolute;
+            transition: transform 0.5s;
         }
         &.burger-btn::before {
             transform: rotate(-45deg);
+            top: calc(50% - 0.0625rem);
         }
         &.burger-btn::after {
             transform: rotate(45deg);
+            bottom: calc(50% - 0.0625rem);
         }
     }
 }
