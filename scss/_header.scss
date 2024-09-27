@@ -20,13 +20,12 @@
     // .header__top
 
     &__top-container {
-        padding-block: toRem(20);
-        min-height: toRem(287);
+        padding-block: toRem(50);
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        gap: toRem(10);
+        gap: toRem(30);
         position: relative;
         z-index: 3;
         &::before {
@@ -40,7 +39,7 @@
             background-color: $darkColor;
         }
         @media (max-width: $tablet) {
-            min-height: max-content;
+            padding-block: toRem(20);
         }
     }
 
@@ -55,9 +54,31 @@
     &__phone-link {
         color: #fff;
     }
-    .btn-link {
+    & .btn-link {
         @media (max-width: $mobile) {
-            padding: toRem(15);
+            // padding: toRem(15);
+        }
+    }
+    .header__phone-link {
+        position: relative;
+
+        @media (max-width: $tablet) {
+            order: 1;
+            width: toRem(65);
+            height: toRem(65);
+            padding: 0;
+            border-radius: 50%;
+            font-size: 0;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: url("../img/icons/phone.svg") center / 60% no-repeat;
+            }
         }
     }
 }
@@ -134,7 +155,7 @@
     background-color: rgba(41, 46, 54, 0.9);
     backdrop-filter: blur(10px);
 
-    padding: toRem(250) 0 toRem(30) toRem(30);
+    padding: toRem(180) 0 toRem(30) toRem(30);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,5 +184,10 @@
     }
     & .social {
         padding-inline-end: toRem(40);
+    }
+    & .btn-link {
+        padding: toRem(5) toRem(10);
+        width: 100%;
+        margin-left: toRem(-30);
     }
 }

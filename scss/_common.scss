@@ -23,17 +23,21 @@
     }
 }
 .logo {
-    // width: toPercent(378, $maxWidthContainer);
     flex: 0 1 toPercent(378, $maxWidthContainer);
-    // flex-basis: toPercent(378, $maxWidthContainer);
-    height: toRem(188);
-    min-width: toRem(200);
-    aspect-ratio: 378 / 188;
-
+    min-width: toRem(252);
     overflow: hidden;
-    background: url("../img/logo.svg") center / cover no-repeat;
+    //logo__img
+    &__img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 378 / 188;
+        object-fit: cover;
+    }
     @media (max-width: $tablet) {
-        flex-basis: toRem(192);
+        max-width: toRem(125);
+        min-width: toRem(125);
+        height: toRem(125);
+        margin-right: auto;
     }
 }
 
@@ -85,13 +89,13 @@
 .burger-btn {
     width: toRem(50);
     height: toRem(50);
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     transition: justify-content 0.1s 1s;
-
+    order: 2;
     &::before,
     &::after,
     & div {
@@ -137,5 +141,8 @@
             transform: rotate(45deg);
             bottom: calc(50% - 0.0625rem);
         }
+    }
+    @media (max-width: $tablet) {
+        display: flex;
     }
 }
