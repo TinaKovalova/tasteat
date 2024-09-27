@@ -25,9 +25,10 @@
 .logo {
     // width: toPercent(378, $maxWidthContainer);
     flex: 0 1 toPercent(378, $maxWidthContainer);
-    flex-basis: toPercent(378, $maxWidthContainer);
-    min-width: toRem(192);
-    aspect-ratio: 278 / 188;
+    // flex-basis: toPercent(378, $maxWidthContainer);
+    height: toRem(188);
+    min-width: toRem(200);
+    aspect-ratio: 378 / 188;
 
     overflow: hidden;
     background: url("../img/logo.svg") center / cover no-repeat;
