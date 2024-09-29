@@ -544,13 +544,11 @@
     & .section-header > * {
         color: #fff;
     }
-    & .section-header {
-        align-items: flex-start;
-    }
 
     // .testimonial__swiper
 
     &__swiper {
+        position: relative;
     }
 }
 
@@ -609,7 +607,7 @@
         }
     }
     & .swiper-pagination {
-        position: relative;
+        width: toRem($maxWidthContainer) !important;
     }
 
     & .swiper-pagination-bullet {
@@ -663,9 +661,6 @@
         }
         &:not(:last-child) {
             margin-bottom: toRem(40);
-        }
-        & .section-header__text {
-            text-align: center;
         }
     }
 }
@@ -818,9 +813,6 @@
         @media (max-width: $tablet) {
             width: 100%;
         }
-        & .section-header__text {
-            text-align: center;
-        }
     }
 
     // .popular__collection
@@ -928,3 +920,128 @@
         flex: 0 1 toRem(75);
     }
 }
+.services {
+    background-color: $darkColor;
+    color: #fff;
+    // .testimonial__container
+
+    & .section-header > * {
+        color: #fff;
+    }
+    // .services__container
+
+    &__container {
+        @include adaptiveValue("padding-block", 141, 50);
+        display: flex;
+        // flex-wrap: wrap;
+        align-items: flex-start;
+        gap: toRem(50) toPercent(100, $maxWidthContainer);
+        @media (max-width: $tablet) {
+            flex-direction: column;
+        }
+    }
+
+    // .services__header
+
+    &__header {
+        flex: 1 1 toPercent(438, $maxWidthContainer);
+
+        & .section-header {
+            row-gap: toRem(6);
+        }
+        & .section-header__title:not(:last-child) {
+            margin-bottom: toRem(7);
+        }
+        @media (max-width: $mobile) {
+        }
+    }
+
+    // .services__service-list
+
+    &__service-list {
+        flex: 1 1 toPercent(822, $maxWidthContainer);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: toRem(30);
+        @media (max-width: $tablet) {
+            width: 100%;
+        }
+    }
+
+    // .services__service-item
+
+    &__service-item {
+        flex: 0 1 toPercent(254, 822);
+        min-width: toRem(200);
+        aspect-ratio: 254 / 235;
+        @media (max-width: $smallMobile) {
+            flex-basis: 100%;
+            height: max-content;
+            aspect-ratio: 280/ 100;
+        }
+    }
+}
+
+.service {
+    width: 100%;
+    height: 100%;
+    padding-inline: toRem(5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: toRem(15);
+    border: toRem(20) solid #323841;
+    & > *:first-child {
+        margin-top: toRem(5);
+    }
+    @media (max-width: $smallMobile) {
+        flex-direction: row;
+        gap: toRem(25);
+    }
+
+    // .service__icon
+
+    &__icon {
+        width: toRem(60);
+        height: toRem(60);
+        // width: toPercent(60, 254);
+        // height: toPercent(60, 235);
+        aspect-ratio: 254 / 235;
+        flex-shrink: 0;
+    }
+
+    // .service__name
+
+    &__name {
+        font-family: "Cormorant Infant", serif;
+        // font-size: toRem(25);
+        @include adaptiveValue("font-size", 25, 20);
+        line-height: 1.4;
+        text-transform: capitalize;
+    }
+}
+
+// .section-header {
+
+// 		// .section-header__lables
+
+// 		&__lables {
+// 		}
+
+// 		// .section-header__label
+
+// 		&__label {
+// 		}
+
+// 		// .section-header__title
+
+// 		&__title {
+// 		}
+
+// 		// .section-header__text
+
+// 		&__text {
+// 		}
+// }

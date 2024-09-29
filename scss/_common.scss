@@ -58,7 +58,12 @@
     justify-content: center;
     align-items: center;
     row-gap: toRem(8);
-
+    &--align-start {
+        align-items: flex-start;
+        & .section-header__text {
+            text-align: left;
+        }
+    }
     // .section-header__lables
 
     &__lables {
@@ -95,7 +100,7 @@
     // .section-header__text
 
     &__text {
-       
+        text-align: center;
     }
 }
 .burger-btn {
