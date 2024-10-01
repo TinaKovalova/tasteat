@@ -40,15 +40,15 @@
         object-fit: cover;
     }
     @media (max-width: $tablet) {
-        max-width: toRem(125);
-        min-width: toRem(125);
-        height: toRem(125);
-        margin-right: auto;
-    }
-    @media (max-width: $smallMobile) {
         max-width: toRem(100);
         min-width: toRem(100);
         height: toRem(100);
+        margin-right: auto;
+    }
+    @media (max-width: $smallMobile) {
+        max-width: toRem(60);
+        min-width: toRem(60);
+        height: toRem(60);
     }
 }
 
@@ -105,8 +105,8 @@
     }
 }
 .burger-btn {
-    width: toRem(50);
-    height: toRem(50);
+    width: toRem(40);
+    height: toRem(30);
     display: none;
     flex-direction: column;
     justify-content: center;

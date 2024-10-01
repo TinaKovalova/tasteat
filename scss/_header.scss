@@ -43,10 +43,7 @@
             background-color: $darkColor;
         }
         @media (max-width: $tablet) {
-            padding-block: toRem(20);
-        }
-        @media (max-width: $mobile) {
-            padding-block: toRem(10);
+            padding-block: toRem(5);
         }
     }
 
@@ -71,8 +68,8 @@
 
         @media (max-width: $tablet) {
             order: 1;
-            width: toRem(65);
-            height: toRem(65);
+            width: toRem(45);
+            height: toRem(45);
             padding: 0;
             border-radius: 50%;
             font-size: 0;
