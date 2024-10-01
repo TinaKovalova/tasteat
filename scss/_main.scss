@@ -1066,8 +1066,6 @@
 }
 
 .blog-card {
-    background-color: antiquewhite;
-
     display: flex;
     flex-direction: column;
     @media (any-hover) {
@@ -1095,7 +1093,7 @@
             left: 0;
             top: 0;
             z-index: 1;
-            transition: background 0.5s;
+            transition: background-color 0.5s;
         }
     }
     & .btn-link {

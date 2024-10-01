@@ -1984,7 +1984,6 @@ body:has(.burger-menu--active) {
 }
 
 .blog-card {
-  background-color: antiquewhite;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2022,8 +2021,8 @@ body:has(.burger-menu--active) {
   left: 0;
   top: 0;
   z-index: 1;
-  -webkit-transition: background 0.5s;
-  transition: background 0.5s;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
 }
 .blog-card .btn-link {
   text-transform: capitalize;
