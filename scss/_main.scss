@@ -532,6 +532,7 @@
     @include adaptiveValue("padding-block-start", 141, 50);
     @include adaptiveValue("padding-block-end", 120, 50);
     background-color: $darkColor;
+    position: relative;
     color: #fff;
     // .testimonial__container
 
@@ -548,7 +549,6 @@
     // .testimonial__swiper
 
     &__swiper {
-        position: relative;
     }
 }
 
@@ -606,8 +606,10 @@
             width: toRem(280);
         }
     }
-    & .swiper-pagination {
-        width: toRem($maxWidthContainer) !important;
+    & .swiper-pagination-bullets.swiper-pagination-horizontal {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
     }
 
     & .swiper-pagination-bullet {
@@ -1252,7 +1254,7 @@
         color: #fff;
         font-size: toRem(22);
         padding: toRem(18) toRem(25);
-        
+
         &[type="time"]::-webkit-calendar-picker-indicator,
         &[type="date"]::-webkit-calendar-picker-indicator,
         &[type="number"]::-webkit-inner-spin-button {

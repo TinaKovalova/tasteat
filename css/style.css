@@ -1286,6 +1286,7 @@ body:has(.burger-menu--active) {
 
 .testimonial {
   background-color: #292e36;
+  position: relative;
   color: #fff;
 }
 @media (min-width: 86.25em) {
@@ -1349,10 +1350,6 @@ body:has(.burger-menu--active) {
 .testimonial .section-header > * {
   color: #fff;
 }
-.testimonial__swiper {
-  position: relative;
-}
-
 .swiper {
   width: 100vw;
 }
@@ -1373,8 +1370,12 @@ body:has(.burger-menu--active) {
     width: 17.5rem;
   }
 }
-.swiper .swiper-pagination {
-  width: 85rem !important;
+.swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
 }
 .swiper .swiper-pagination-bullet {
   width: 1.25rem;
