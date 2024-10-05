@@ -74,7 +74,7 @@
                 </div>
         </header>
         <main class="page">
-            <section class="hero">
+            <!-- <section class="hero">
                 <div class="hero__container">
                     <div class="hero__content">
                         <div class="hero__content-body">
@@ -751,6 +751,38 @@
                             </div>
                         </article>
 
+                    </div>
+                </div>
+            </section> -->
+            <section class="reservation">
+                <div class="reservation__container">
+                    <div class="reservation__body">
+                        <div class="reservation__header section-header">
+                            <div class="section-header__lables">
+                                <div class="section-header__label">reservation</div>
+                            </div>
+                            <h2 class="section-header__title">Book Your Table</h2>
+                        </div>
+                        <form action="#" method="post" class="reservation-form" name="reservation-form">
+                            <div class="reservation-form__contacts">
+                                <input type="text" id="name" name="name" class="reservation-form__input"
+                                    placeholder="Name" required>
+                                <input type="email" id="email" name="email" class="reservation-form__input"
+                                    placeholder="Email" required>
+                            </div>
+                            <div class="reservation-form__reservation-info">
+                                <input type="number" id="persons" name="persons" min="1" class="reservation-form__input"
+                                    placeholder="Persons" required>
+                                <input type="time" id="timing" name="timing" class="reservation-form__input"
+                                    placeholder="Timing" required>
+                                <input type="date" id="date" name="date" class="reservation-form__input"
+                                    placeholder="Date" required>
+                            </div>
+                            <button type="submit" class="reservation-form__button">Book A Table</button>
+                        </form>
+                    </div>
+                    <div class="reservation__img-bg">
+                        <img src="img/reservation-bg.jpg" alt="restaurant hall" class="reservation__img">
                     </div>
                 </div>
             </section>

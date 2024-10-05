@@ -118,7 +118,7 @@ body:has(.burger-menu--active) {
   margin: 0 auto;
 }
 
-.btn-link {
+.btn-link, .reservation-form__button {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   font-size: 1.375rem;
@@ -134,7 +134,7 @@ body:has(.burger-menu--active) {
   color: #292e36;
 }
 @media (any-hover) {
-  .btn-link:hover {
+  .btn-link:hover, .reservation-form__button:hover {
     background-color: #e1b168;
     color: #292e36;
   }
@@ -144,12 +144,12 @@ body:has(.burger-menu--active) {
   }
 }
 @media (max-width: 991.98px) {
-  .btn-link {
+  .btn-link, .reservation-form__button {
     padding: 0.625rem 1.875rem;
   }
 }
 @media (max-width: 479.98px) {
-  .btn-link {
+  .btn-link, .reservation-form__button {
     width: 100%;
   }
 }
@@ -598,7 +598,7 @@ body:has(.burger-menu--active) {
   -webkit-padding-end: 2.5rem;
           padding-inline-end: 2.5rem;
 }
-.burger-menu .btn-link {
+.burger-menu .btn-link, .burger-menu .reservation-form__button {
   padding: 0.3125rem 0.625rem;
   width: 100%;
   margin-left: -1.875rem;
@@ -2024,13 +2024,13 @@ body:has(.burger-menu--active) {
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
 }
-.blog-card .btn-link {
+.blog-card .btn-link, .blog-card .reservation-form__button {
   text-transform: capitalize;
   position: relative;
   z-index: 2;
 }
 @media (max-width: 479.98px) {
-  .blog-card .btn-link {
+  .blog-card .btn-link, .blog-card .reservation-form__button {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
@@ -2078,4 +2078,188 @@ body:has(.burger-menu--active) {
 .blog-card__header .section-header__title, .blog-card__header .periods__header {
   font-size: 1.875rem;
   line-height: 1.3;
+}
+.reservation {
+  position: relative;
+}
+.reservation__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media (min-width: 86.25em) {
+  .reservation__container {
+    padding-block: 8.75rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 86.25em) {
+  @supports (padding-block: clamp( 3.125rem , 1.4268867925rem  +  8.4905660377vw , 8.75rem )) {
+    .reservation__container {
+      padding-block: clamp( 3.125rem , 1.4268867925rem  +  8.4905660377vw , 8.75rem );
+    }
+  }
+  @supports not (padding-block: clamp( 3.125rem , 1.4268867925rem  +  8.4905660377vw , 8.75rem )) {
+    .reservation__container {
+      padding-block: calc(3.125rem + 5.625 * (100vw - 20rem) / 66.25);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .reservation__container {
+    padding-block: 3.125rem;
+  }
+}
+.reservation__body {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 67.6470588235%;
+          flex: 0 1 67.6470588235%;
+  min-width: 17.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1.875rem;
+  background: rgba(41, 46, 54, 0.95);
+  position: relative;
+  z-index: 2;
+}
+@media (min-width: 86.25em) {
+  .reservation__body {
+    padding: 8.75rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 86.25em) {
+  @supports (padding: clamp( 1.875rem , -0.2004716981rem  +  10.3773584906vw , 8.75rem )) {
+    .reservation__body {
+      padding: clamp( 1.875rem , -0.2004716981rem  +  10.3773584906vw , 8.75rem );
+    }
+  }
+  @supports not (padding: clamp( 1.875rem , -0.2004716981rem  +  10.3773584906vw , 8.75rem )) {
+    .reservation__body {
+      padding: calc(1.875rem + 6.875 * (100vw - 20rem) / 66.25);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .reservation__body {
+    padding: 1.875rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .reservation__body {
+    -webkit-box-flex: 0.7;
+        -ms-flex-positive: 0.7;
+            flex-grow: 0.7;
+  }
+}
+.reservation__img-bg {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.reservation__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1440/977;
+}
+.reservation__header {
+  color: #fff;
+}
+.reservation__header .section-header__lables, .reservation__header .section-header__title, .reservation__header .periods__header {
+  color: inherit;
+}
+.reservation__header:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.reservation-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-padding-after: 0.9375rem;
+          padding-block-end: 0.9375rem;
+  row-gap: 1.875rem;
+}
+.reservation-form__contacts, .reservation-form__reservation-info {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.25rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (max-width: 767.98px) {
+  .reservation-form__contacts, .reservation-form__reservation-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .reservation-form__contacts .reservation-form__input, .reservation-form__reservation-info .reservation-form__input {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+}
+.reservation-form__contacts .reservation-form__input {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 47.96875%;
+          flex: 0 1 47.96875%;
+}
+.reservation-form__reservation-info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30.9375%;
+          flex: 0 1 30.9375%;
+}
+.reservation-form__input {
+  border: 1px solid #858585;
+  color: #fff;
+  font-size: 1.375rem;
+  padding: 1.125rem 1.5625rem;
+}
+.reservation-form__input::-webkit-input-placeholder {
+  color: inherit;
+}
+.reservation-form__input::-moz-placeholder {
+  color: inherit;
+}
+.reservation-form__input:-ms-input-placeholder {
+  color: inherit;
+}
+.reservation-form__input::-ms-input-placeholder {
+  color: inherit;
+}
+.reservation-form__input::placeholder {
+  color: inherit;
+}
+.reservation-form__button {
+  border-color: transparent;
+  background-color: #fff;
+  color: #000;
+  padding-inline: 3.375rem;
+}
+@media (max-width: 991.98px) {
+  .reservation-form__button {
+    padding: 0.625rem 1.875rem;
+  }
 }
