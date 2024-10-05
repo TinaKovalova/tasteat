@@ -25,6 +25,7 @@
 
 const burgerBtn = document.querySelector(".burger-btn");
 const burgerMenu = document.querySelector(".burger-menu");
+const forms = document.forms;
 
 burgerBtn.addEventListener("click", (e) => {
   e.currentTarget.classList.toggle("burger-btn--active");
@@ -36,5 +37,19 @@ burgerMenu.addEventListener("click", (e) => {
     burgerMenu.classList.toggle("burger-menu--active");
   }
 });
+
+const reservationForm = forms?.reservation;
+if (reservationForm) {
+  reservationForm.addEventListener("focusin", (e) => {
+const targetName = e.target.name;
+     if (targetName === "time" || targetName === "date")
+     reservationForm.elements[targetName].type = targetName;
+  });
+
+}
+
+
+
+
 
 

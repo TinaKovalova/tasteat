@@ -1252,8 +1252,11 @@
         color: #fff;
         font-size: toRem(22);
         padding: toRem(18) toRem(25);
-        &::placeholder {
-            color: inherit;
+        
+        &[type="time"]::-webkit-calendar-picker-indicator,
+        &[type="date"]::-webkit-calendar-picker-indicator,
+        &[type="number"]::-webkit-inner-spin-button {
+            display: none;
         }
     }
 

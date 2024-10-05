@@ -81,6 +81,33 @@ textarea {
           appearance: none;
 }
 
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 0px transparent inset;
+  -webkit-text-fill-color: #fff;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+input::-webkit-input-placeholder {
+  color: inherit;
+  text-transform: capitalize;
+}
+input::-moz-placeholder {
+  color: inherit;
+  text-transform: capitalize;
+}
+input:-ms-input-placeholder {
+  color: inherit;
+  text-transform: capitalize;
+}
+input::-ms-input-placeholder {
+  color: inherit;
+  text-transform: capitalize;
+}
+input::placeholder {
+  color: inherit;
+  text-transform: capitalize;
+}
+
 body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
@@ -542,7 +569,7 @@ body:has(.burger-menu--active) {
   background-color: rgba(41, 46, 54, 0.9);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  padding: 11.25rem 0 1.875rem 1.875rem;
+  padding: 5rem 0 1.875rem 1.875rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2237,20 +2264,8 @@ body:has(.burger-menu--active) {
   font-size: 1.375rem;
   padding: 1.125rem 1.5625rem;
 }
-.reservation-form__input::-webkit-input-placeholder {
-  color: inherit;
-}
-.reservation-form__input::-moz-placeholder {
-  color: inherit;
-}
-.reservation-form__input:-ms-input-placeholder {
-  color: inherit;
-}
-.reservation-form__input::-ms-input-placeholder {
-  color: inherit;
-}
-.reservation-form__input::placeholder {
-  color: inherit;
+.reservation-form__input[type=time]::-webkit-calendar-picker-indicator, .reservation-form__input[type=date]::-webkit-calendar-picker-indicator, .reservation-form__input[type=number]::-webkit-inner-spin-button {
+  display: none;
 }
 .reservation-form__button {
   border-color: transparent;

@@ -74,7 +74,7 @@
                 </div>
         </header>
         <main class="page">
-            <!-- <section class="hero">
+            <section class="hero">
                 <div class="hero__container">
                     <div class="hero__content">
                         <div class="hero__content-body">
@@ -753,7 +753,7 @@
 
                     </div>
                 </div>
-            </section> -->
+            </section>
             <section class="reservation">
                 <div class="reservation__container">
                     <div class="reservation__body">
@@ -763,7 +763,7 @@
                             </div>
                             <h2 class="section-header__title">Book Your Table</h2>
                         </div>
-                        <form action="#" method="post" class="reservation-form" name="reservation-form">
+                        <form action="#" method="post" class="reservation-form" name="reservation">
                             <div class="reservation-form__contacts">
                                 <input type="text" id="name" name="name" class="reservation-form__input"
                                     placeholder="Name" required>
@@ -773,10 +773,10 @@
                             <div class="reservation-form__reservation-info">
                                 <input type="number" id="persons" name="persons" min="1" class="reservation-form__input"
                                     placeholder="Persons" required>
-                                <input type="time" id="timing" name="timing" class="reservation-form__input"
+                                <input type="text" id="time" name="time" class="reservation-form__input"
                                     placeholder="Timing" required>
-                                <input type="date" id="date" name="date" class="reservation-form__input"
-                                    placeholder="Date" required>
+                                <input type="text" id="date" name="date" min="2024-10-05" max="9999-12-31"
+                                    class="reservation-form__input" placeholder="Date" required>
                             </div>
                             <button type="submit" class="reservation-form__button">Book A Table</button>
                         </form>

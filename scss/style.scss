@@ -4,6 +4,19 @@
 @import "variables";
 @import "mixins";
 
+input {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 0px transparent inset;
+        -webkit-text-fill-color: #fff;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+    &::placeholder {
+        color: inherit;
+        text-transform: capitalize;
+    }
+}
 body {
     font-family: "Josefin Sans", sans-serif;
     font-weight: 400;
@@ -31,6 +44,7 @@ body {
     padding-inline: toRem(10);
     margin: 0 auto;
 }
+
 @import "common";
 @import "header";
 @import "main";
