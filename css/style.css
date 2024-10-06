@@ -81,7 +81,14 @@ textarea {
           appearance: none;
 }
 
-input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
+input:is(:-webkit-autofill, :-webkit-autofill, :-webkit-autofill:hover, :-webkit-autofill:focus) {
+  -webkit-box-shadow: 0 0 0 0px transparent inset;
+  -webkit-text-fill-color: #fff;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:is(:autofill, :-webkit-autofill, :-webkit-autofill:hover, :-webkit-autofill:focus) {
   -webkit-box-shadow: 0 0 0 0px transparent inset;
   -webkit-text-fill-color: #fff;
   -webkit-transition: background-color 5000s ease-in-out 0s;
@@ -2218,6 +2225,7 @@ body:has(.burger-menu--active) {
 }
 
 .reservation-form {
+  font-size: 1.375rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2268,9 +2276,9 @@ body:has(.burger-menu--active) {
 .reservation-form__input {
   border: 1px solid #858585;
   color: #fff;
-  font-size: 1.375rem;
   padding: 1.125rem 1.5625rem;
   position: relative;
+  min-height: 3.18em;
 }
 .reservation-form__input[type=time]::-webkit-calendar-picker-indicator, .reservation-form__input[type=date]::-webkit-calendar-picker-indicator {
   background: none;
@@ -2279,7 +2287,6 @@ body:has(.burger-menu--active) {
   top: 0;
   width: 100%;
   height: 100%;
-  min-height: 3.136em;
   margin: 0;
   padding: 0;
 }

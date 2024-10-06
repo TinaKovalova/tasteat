@@ -41,6 +41,7 @@ burgerMenu.addEventListener("click", (e) => {
 const reservationForm = forms?.reservation;
 if (reservationForm) {
   reservationForm.addEventListener("focusin", (e) => changeInputTypeIntoDateTime(e));
+  reservationForm.addEventListener("focusout", (e) => changeInputTypeIntoDateTime(e));
   reservationForm.addEventListener("click", (e) => changeInputTypeIntoDateTime(e));
 }
 

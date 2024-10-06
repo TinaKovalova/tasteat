@@ -5,9 +5,7 @@
 @import "mixins";
 
 input {
-    &:-webkit-autofill,
-    &:-webkit-autofill:hover,
-    &:-webkit-autofill:focus {
+    &:is(:autofill, :-webkit-autofill, :-webkit-autofill:hover, :-webkit-autofill:focus) {
         -webkit-box-shadow: 0 0 0 0px transparent inset;
         -webkit-text-fill-color: #fff;
         transition: background-color 5000s ease-in-out 0s;
