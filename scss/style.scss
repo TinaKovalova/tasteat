@@ -6,8 +6,9 @@
 
 input {
     &:is(:autofill, :-webkit-autofill, :-webkit-autofill:hover, :-webkit-autofill:focus) {
-        -webkit-box-shadow: 0 0 0 0px transparent inset;
-        -webkit-text-fill-color: #fff;
+        -webkit-box-shadow: 0 0 0 0px transparent inset !important;
+        -webkit-text-fill-color: #fff !important;
+        -webkit-background-clip: text !important;
         transition: background-color 5000s ease-in-out 0s;
     }
     &::placeholder {
