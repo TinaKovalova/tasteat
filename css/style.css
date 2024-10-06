@@ -2270,9 +2270,20 @@ body:has(.burger-menu--active) {
   color: #fff;
   font-size: 1.375rem;
   padding: 1.125rem 1.5625rem;
+  position: relative;
 }
-.reservation-form__input[type=time]::-webkit-calendar-picker-indicator, .reservation-form__input[type=date]::-webkit-calendar-picker-indicator, .reservation-form__input[type=number]::-webkit-inner-spin-button {
-  display: none;
+.reservation-form__input[type=time]::-webkit-calendar-picker-indicator, .reservation-form__input[type=date]::-webkit-calendar-picker-indicator {
+  background: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 991.98px) {
+  .reservation-form__input[type=time]::-webkit-calendar-picker-indicator, .reservation-form__input[type=date]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
 }
 .reservation-form__button {
   border-color: transparent;
