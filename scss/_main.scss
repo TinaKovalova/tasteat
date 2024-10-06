@@ -1264,7 +1264,6 @@
         padding: toRem(18) toRem(25);
         position: relative;
         min-height: 3.18em;
-        text-align: start;
         @media (max-width: toRem(1024)) {
             padding-inline: toRem(18);
         }
@@ -1291,6 +1290,7 @@
             }
             &._has-value::-webkit-datetime-edit-fields-wrapper {
                 opacity: 1;
+                text-align: start;
             }
 
             &:not(._has-value):before {
