@@ -1286,7 +1286,6 @@ body:has(.burger-menu--active) {
 
 .testimonial {
   background-color: #292e36;
-  position: relative;
   color: #fff;
 }
 @media (min-width: 86.25em) {
@@ -1350,6 +1349,13 @@ body:has(.burger-menu--active) {
 .testimonial .section-header > * {
   color: #fff;
 }
+.testimonial__swiper {
+  position: relative;
+}
+.testimonial__swiper .swiper {
+  position: static;
+}
+
 .swiper {
   width: 100vw;
 }

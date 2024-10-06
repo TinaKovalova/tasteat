@@ -532,7 +532,6 @@
     @include adaptiveValue("padding-block-start", 141, 50);
     @include adaptiveValue("padding-block-end", 120, 50);
     background-color: $darkColor;
-    position: relative;
     color: #fff;
     // .testimonial__container
 
@@ -549,6 +548,10 @@
     // .testimonial__swiper
 
     &__swiper {
+        position: relative;
+        & .swiper {
+            position: static;
+        }
     }
 }
 
@@ -593,6 +596,7 @@
 
 .swiper {
     width: 100vw;
+
     @media (max-width: $mobile) {
         width: 100%;
     }
