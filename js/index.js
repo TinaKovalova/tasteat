@@ -40,17 +40,17 @@ burgerMenu.addEventListener("click", (e) => {
 
 const reservationForm = forms?.reservation;
 if (reservationForm) {
-  reservationForm.addEventListener("focusin", (e) => changeInputTypeIntoDateTime(e));
-  // reservationForm.addEventListener("focusout", (e) => changeInputTypeIntoDateTime(e));
-  // reservationForm.addEventListener("click", (e) => changeInputTypeIntoDateTime(e));
+  reservationForm.addEventListener("focusin", (e) => {
+    const targetName = e.target.name;
+    if (targetName === "time" || targetName === "date") {
+      reservationForm.elements[targetName].type = targetName;
+      if (screen.width <= 991.98) {
+        reservationForm.elements[targetName].showPicker();
+      }
+    }
+  });
 }
 
-function changeInputTypeIntoDateTime(event) {
-  console.log(event)
-  const targetName = event.target.name;
-  if (targetName === "time" || targetName === "date")
-    reservationForm.elements[targetName].type = targetName;
-}
 
 
 
