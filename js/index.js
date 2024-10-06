@@ -41,7 +41,7 @@ burgerMenu.addEventListener("click", (e) => {
 const reservationForm = forms?.reservation;
 if (reservationForm) {
   reservationForm.addEventListener("focusin", (e) => {
-const targetName = e.target.name;
+     const targetName = e.target.name;
      if (targetName === "time" || targetName === "date")
      reservationForm.elements[targetName].type = targetName;
   });
