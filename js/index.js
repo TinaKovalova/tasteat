@@ -42,14 +42,14 @@ const reservationForm = forms?.reservation;
 if (reservationForm) {
   reservationForm.addEventListener("focusin", (e) => {
     const targetName = e.target.name;
-     console.log("focus", targetName);
+    console.log("focus", targetName);
+    
     if (targetName === "time" || targetName === "date") {
       const targetElement = reservationForm.elements[targetName];
       targetElement.type = targetName;
-      targetElement.showPicker();
-      // if (screen.width <= 991.98) {
-      //   targetElement.showPicker();
-      // }
+      if (screen.width <= 991.98) {
+        targetElement.showPicker();
+      }
     }
   });
   reservationForm.addEventListener("focusout", (e) => {
