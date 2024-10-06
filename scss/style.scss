@@ -5,15 +5,8 @@
 @import "mixins";
 
 input {
-    &:is(:autofill, :-webkit-autofill, :-webkit-autofill:hover, :-webkit-autofill:focus) {
-        // -webkit-box-shadow: 0 0 0 0px transparent inset !important;
-        // -webkit-text-fill-color: #fff !important;
-        // -webkit-background-clip: content-box !important;
-        // color: #fff !important;
-        // background-clip: content-box !important;
-        // box-shadow: 0 0 0 0px transparent inset !important;
-        transition: all 5000s ease-in-out 0s;
-    }
+    all: unset;
+    transition: all 5000s ease-in-out 0s;
     &::placeholder {
         color: inherit;
         text-transform: capitalize;
