@@ -2295,7 +2295,6 @@ body:has(.burger-menu--active) {
 .reservation-form__input[type=time]::-webkit-calendar-picker-indicator, .reservation-form__input[type=date]::-webkit-calendar-picker-indicator {
   background: none;
   position: absolute;
-  z-index: -1;
   left: 0;
   top: 0;
   width: 100%;
