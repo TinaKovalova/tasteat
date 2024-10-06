@@ -38,30 +38,36 @@ burgerMenu.addEventListener("click", (e) => {
   }
 });
 
-// const reservationForm = forms?.reservation;
-// if (reservationForm) {
-//   reservationForm.addEventListener("focusin", (e) => {
-//     const targetName = e.target.name;
-//     console.log("focus", targetName);
-    
-//     if (targetName === "time" || targetName === "date") {
-//       const targetElement = reservationForm.elements[targetName];
-//       targetElement.type = targetName;
-//       if (screen.width <= 991.98) {
-//         targetElement.showPicker();
-//       }
-//     }
-//   });
-//   reservationForm.addEventListener("focusout", (e) => {
-//     const targetName = e.target.name;
-//     console.log("focusout", targetName);
-//     if (targetName === "time" || targetName === "date") {
-//       const targetElement = reservationForm.elements[targetName];
-//       targetElement.type = 'text';
-//     }
-//   });
-// }
 
+const reservationForm = forms?.reservation;
+if (reservationForm) {
+     const placeholders = { time: "Timing", date: "Date" };
+
+  reservationForm.addEventListener("change", (e) => {
+    e.target.classList.toggle("_has-value", e.target.value);
+  });
+
+  reservationForm.addEventListener("focusin", (e) => {
+    const target = e.target;
+    const targetName = target.name;
+      if (targetName in placeholders) {
+        target.setAttribute("placeholder", "");
+      }
+  });
+
+   reservationForm.addEventListener("focusout", (e) => {
+     const target = e.target;
+     const targetName = target.name;
+     if (targetName in placeholders) {
+       !target.value
+         ? target.setAttribute("placeholder", placeholders[targetName])
+         : "";
+     }
+   });
+}
+ 
+
+ 
 
 
 

@@ -1268,18 +1268,41 @@
             padding-inline: toRem(18);
         }
 
-        &[type="time"]::-webkit-calendar-picker-indicator,
-        &[type="date"]::-webkit-calendar-picker-indicator {
-            background: none;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            @media (min-width: $tablet) {
-                display: none;
+        &[type="time"],
+        &[type="date"] {
+            &::-webkit-calendar-picker-indicator,
+            &::-webkit-calendar-picker-indicator {
+                background: none;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                @media (min-width: $tablet) {
+                    display: none;
+                }
+            }
+
+            &:not(:focus)::-webkit-datetime-edit-fields-wrapper {
+                opacity: 0;
+            }
+            &._has-value::-webkit-datetime-edit-fields-wrapper {
+                opacity: 1;
+            }
+
+            &:not(._has-value):before {
+                content: attr(placeholder);
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                padding: toRem(18) toRem(25);
+                @media (max-width: toRem(1024)) {
+                    padding-inline: toRem(18);
+                }
             }
         }
     }
