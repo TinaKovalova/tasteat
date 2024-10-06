@@ -1264,6 +1264,7 @@
         padding: toRem(18) toRem(25);
         position: relative;
         min-height: 3.18em;
+        text-align: start;
         @media (max-width: toRem(1024)) {
             padding-inline: toRem(18);
         }
