@@ -38,18 +38,19 @@ burgerMenu.addEventListener("click", (e) => {
   }
 });
 
-const reservationForm = forms?.reservation;
-if (reservationForm) {
-  reservationForm.addEventListener("focusin", (e) => {
-    const targetName = e.target.name;
-    if (targetName === "time" || targetName === "date") {
-      reservationForm.elements[targetName].type = targetName;
-      if (screen.width <= 991.98) {
-        reservationForm.elements[targetName].showPicker();
-      }
-    }
-  });
-}
+// const reservationForm = forms?.reservation;
+// if (reservationForm) {
+//   reservationForm.addEventListener("focusin", (e) => {
+//     const targetName = e.target.name;
+//     if (targetName === "time" || targetName === "date") {
+//       const targetElement = reservationForm.elements[targetName];
+//       targetElement.type = targetName;
+//       if (screen.width <= 991.98) {
+//         targetElement.showPicker();
+//       }
+//     }
+//   });
+// }
 
 
 

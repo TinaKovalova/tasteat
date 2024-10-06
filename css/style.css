@@ -2273,6 +2273,12 @@ body:has(.burger-menu--active) {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 30.9375%;
           flex: 0 1 30.9375%;
+  width: 30.9375%;
+}
+@media (max-width: 991.98px) {
+  .reservation-form__reservation-info .reservation-form__input {
+    width: 100%;
+  }
 }
 .reservation-form__input {
   border: 1px solid #858585;
@@ -2280,6 +2286,11 @@ body:has(.burger-menu--active) {
   padding: 1.125rem 1.5625rem;
   position: relative;
   min-height: 3.18em;
+}
+@media (max-width: 64rem) {
+  .reservation-form__input {
+    padding-inline: 1.125rem;
+  }
 }
 .reservation-form__input[type=time]::-webkit-calendar-picker-indicator, .reservation-form__input[type=date]::-webkit-calendar-picker-indicator {
   background: none;
