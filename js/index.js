@@ -46,9 +46,10 @@ if (reservationForm) {
     if (targetName === "time" || targetName === "date") {
       const targetElement = reservationForm.elements[targetName];
       targetElement.type = targetName;
-      if (screen.width <= 991.98) {
-        targetElement.showPicker();
-      }
+      targetElement.showPicker();
+      // if (screen.width <= 991.98) {
+      //   targetElement.showPicker();
+      // }
     }
   });
   reservationForm.addEventListener("focusout", (e) => {
