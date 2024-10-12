@@ -244,7 +244,10 @@
 .subscribe {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    @media (max-width: $smallMobile) {
+        flex-wrap: wrap;
+    }
+
     // .subscribe__input
 
     &__input {

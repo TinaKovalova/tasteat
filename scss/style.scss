@@ -5,7 +5,6 @@
 @import "mixins";
 
 input {
-    all: unset;
     transition: all 5000s ease-in-out 0s;
     &::placeholder {
         color: inherit;

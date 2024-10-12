@@ -1238,24 +1238,23 @@
         justify-content: space-between;
         @media (max-width: $mobile) {
             flex-direction: column;
-            .reservation-form__input {
-                flex-grow: 1;
-            }
         }
     }
 
     &__contacts .reservation-form__input {
-        flex: 0 1 toPercent(307, 640);
+        width: toPercent(307, 640);
     }
 
     //reservation-form__reservation-info
     &__reservation-info .reservation-form__input {
-        flex: 0 1 toPercent(198, 640);
         width: toPercent(198, 640);
-        @media (max-width: $tablet) {
+    }
+    .reservation-form__input {
+        @media (max-width: $mobile) {
             width: 100%;
         }
     }
+
     // .reservation-form__input
 
     &__input {
@@ -1263,7 +1262,6 @@
         color: #fff;
         padding: toRem(18) toRem(25);
         position: relative;
-        min-height: 3.18em;
         @media (max-width: toRem(1024)) {
             padding-inline: toRem(18);
         }
