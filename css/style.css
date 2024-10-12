@@ -2266,6 +2266,7 @@ body:has(.burger-menu--active) {
   color: #fff;
   padding: 1.125rem 1.5625rem;
   position: relative;
+  min-height: 3.18em;
 }
 @media (max-width: 64rem) {
   .reservation-form__input {
