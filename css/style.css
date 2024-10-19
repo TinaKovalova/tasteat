@@ -419,6 +419,41 @@ body:has(.burger-menu--active) {
   margin-block: 1.9375rem 2.0625rem;
 }
 
+.up-btn {
+  visibility: hidden;
+  position: fixed;
+  right: 1.875rem;
+  bottom: 1.875rem;
+  z-index: 100;
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 3rem;
+  border-radius: 50%;
+  border: 2px solid #e1b168;
+  color: #e1b168;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+@media (any-hover) {
+  .up-btn:hover {
+    color: #555;
+    border-color: #555;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
 .header {
   background-color: #292e36;
   position: relative;

@@ -1,10 +1,21 @@
-
-
+const upBtn = document.querySelector(".up-btn");
 const burgerBtn = document.querySelector(".burger-btn");
 const burgerMenu = document.querySelector(".burger-menu");
 const nav = document.querySelector(".navigation");
 const header = document.querySelector(".header");
 const forms = document.forms;
+
+window.addEventListener("scroll", () => {
+  document.documentElement.scrollTop > 20 
+    ? (upBtn.style.visibility = "visible")
+    : (upBtn.style.visibility = "hidden");
+  
+})
+upBtn.addEventListener("click", () => {
+  document.documentElement.scrollIntoView({
+     behavior:"smooth"
+  });
+})
 
 burgerBtn.addEventListener("click", (e) => {
   e.currentTarget.classList.toggle("burger-btn--active");
@@ -59,6 +70,8 @@ if (reservationForm) {
      }
    });
 }
+
+
  
 
  
