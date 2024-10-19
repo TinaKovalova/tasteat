@@ -667,10 +667,6 @@
 }
 .picture {
     width: 100%;
-    // @include adaptiveValue("height", 600, 300);
-    // background: url("../img/lights.png") center / cover no-repeat fixed;
-    // position: relative;
-
     &__img {
         width: 100%;
         aspect-ratio: 1440 / 600;
@@ -715,12 +711,12 @@
     flex: 1 0 toPercent(665, $maxWidthContainer);
     min-width: toRem(280);
     min-height: toPercent(409, $maxWidthContainer);
-    background: url("../img/offers/inactive-bg.jpg") center / cover no-repeat;
+    background: url("../img/offers/inactive-bg.webp") center / cover no-repeat;
     overflow: hidden;
     transition: background-image 0.3s;
     @media (any-hover) {
         &:hover {
-            background-image: url("../img/offers/active-bg.jpg");
+            background-image: url("../img/offers/active-bg.webp");
             & .product-slot__price::after {
                 background-color: #fff;
             }
@@ -815,8 +811,8 @@
     &__img-block {
         align-self: center;
         width: fit-content;
-
         width: toPercent(307, 665);
+        min-width: toRem(270);
         position: absolute;
         padding-inline-end: toRem(40);
         top: 0;
@@ -825,16 +821,21 @@
         z-index: 0;
         display: flex;
         align-items: center;
+        @media (max-width: $tablet) {
+            padding-inline-end: toRem(5);
+        }
     }
 
     // .product-slot__image
 
     &__image {
+        width: 100%;
+
         object-fit: contain;
         aspect-ratio: 325 / 274;
-        @media (max-width: $smallMobile) {
-            opacity: 0.6;
+        @media (max-width: $smallMobile), (min-width: $mobile) and (max-width: $tablet) {
             filter: blur(2px);
+            transform: translateX(30%);
         }
     }
 }
@@ -889,7 +890,6 @@
 
     @media (max-width: $mobile) and (min-width: $smallMobile) {
         flex-direction: row;
-
         min-height: toRem(200);
     }
     @media (max-width: $mobile) {
@@ -1345,7 +1345,7 @@
             }
 
             &:not(._has-value):before {
-                content: attr(placeholder);
+                content: attr(data-placeholder);
                 position: absolute;
                 left: 0;
                 top: 0;

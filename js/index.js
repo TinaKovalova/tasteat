@@ -55,20 +55,20 @@ if (reservationForm) {
   reservationForm.addEventListener("focusin", (e) => {
     const target = e.target;
     const targetName = target.name;
-      if (targetName in placeholders) {
-        target.setAttribute("placeholder", "");
-      }
+    if (targetName in placeholders) {
+      target.dataset.placeholder = "";
+    }
   });
 
-   reservationForm.addEventListener("focusout", (e) => {
-     const target = e.target;
-     const targetName = target.name;
-     if (targetName in placeholders) {
-       !target.value
-         ? target.setAttribute("placeholder", placeholders[targetName])
-         : "";
-     }
-   });
+  reservationForm.addEventListener("focusout", (e) => {
+    const target = e.target;
+    const targetName = target.name;
+    if (targetName in placeholders) {
+      !target.value
+        ? (target.dataset.placeholder = placeholders[targetName])
+        : "";
+    }
+  });
 }
 
 

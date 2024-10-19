@@ -1628,14 +1628,14 @@ body:has(.burger-menu--active) {
           flex: 1 0 48.8970588235%;
   min-width: 17.5rem;
   min-height: 30.0735294118%;
-  background: url("../img/offers/inactive-bg.jpg") center/cover no-repeat;
+  background: url("../img/offers/inactive-bg.webp") center/cover no-repeat;
   overflow: hidden;
   -webkit-transition: background-image 0.3s;
   transition: background-image 0.3s;
 }
 @media (any-hover) {
   .product-slot:hover {
-    background-image: url("../img/offers/active-bg.jpg");
+    background-image: url("../img/offers/active-bg.webp");
   }
   .product-slot:hover .product-slot__price::after {
     background-color: #fff;
@@ -1736,6 +1736,7 @@ body:has(.burger-menu--active) {
   width: -moz-fit-content;
   width: fit-content;
   width: 46.1654135338%;
+  min-width: 16.875rem;
   position: absolute;
   -webkit-padding-end: 2.5rem;
           padding-inline-end: 2.5rem;
@@ -1750,16 +1751,25 @@ body:has(.burger-menu--active) {
       -ms-flex-align: center;
           align-items: center;
 }
+@media (max-width: 991.98px) {
+  .product-slot__img-block {
+    -webkit-padding-end: 0.3125rem;
+            padding-inline-end: 0.3125rem;
+  }
+}
 .product-slot__image {
+  width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
   aspect-ratio: 325/274;
 }
-@media (max-width: 479.98px) {
+@media (max-width: 479.98px), (min-width: 767.98px) and (max-width: 991.98px) {
   .product-slot__image {
-    opacity: 0.6;
     -webkit-filter: blur(2px);
             filter: blur(2px);
+    -webkit-transform: translateX(30%);
+        -ms-transform: translateX(30%);
+            transform: translateX(30%);
   }
 }
 
@@ -2531,7 +2541,7 @@ body:has(.burger-menu--active) {
   opacity: 1;
 }
 .reservation-form__input[type=time]:not(._has-value):before, .reservation-form__input[type=date]:not(._has-value):before {
-  content: attr(placeholder);
+  content: attr(data-placeholder);
   position: absolute;
   left: 0;
   top: 0;
