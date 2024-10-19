@@ -406,18 +406,24 @@
         flex-grow: 1;
         padding-block: toRem(35);
     }
+
     //menu__details-block
+
     &__details-block {
-        min-height: toRem(50.4);
-        overflow: hidden;
-        transition: all 0.8s ease-in-out;
+        @keyframes showMenu {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
         &[open] {
-            min-height: toRem(635);
-        }
-        &:not([open]) {
-        }
-        &[open] .menu-list {
-            // transform: translateY(-100%);
+            .menu-list > li {
+                animation: showMenu 0.6s;
+            }
         }
 
         &:not(:last-child) {
@@ -431,8 +437,34 @@
         font-size: toRem(36);
         line-height: 1.4;
         list-style-type: none;
+        overflow: hidden;
+        display: flex;
+        gap: toRem(15);
+        transition: all 0.5s ease;
+        @media (any-hover) {
+            &:hover {
+                color: $yellowColor;
+                &::before {
+                    border-left-color: $yellowColor;
+                }
+            }
+        }
         &::-webkit-details-marker {
             display: none;
+        }
+        &::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: 0.5rem solid transparent;
+            border-bottom: 0.5rem solid transparent;
+            border-left: 0.8rem solid $darkColor;
+            margin-top: 0.45em;
+            margin-left: 0.3em;
+            transition: all 0.5s ease;
+        }
+        .menu__details-block[open] > &::before {
+            transform: rotate(90deg);
         }
     }
     .btn-link {
@@ -443,11 +475,9 @@
 }
 
 .menu-list {
+    overflow: hidden;
     padding-block: toRem(40) toRem(60);
-    // min-height: max-content;
-    // transform: translateY(-100%);
-    z-index: 0;
-    transition: transform 0.5s;
+
     // .menu-list__item
 
     &__item:not(:last-child) {

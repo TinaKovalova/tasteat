@@ -1,26 +1,11 @@
 
 
-// const details = document.querySelectorAll(".menu__details-block");
-// console.log(details)
-// if (details.length > 0) {
-//     for (let i = 0; i < details.length; i++){
-//         console.log(details[i]);
-//         const sammary = details[i].querySelector("summary");
-//         sammary.addEventListener("click", (e) => {
-//                    e.preventDefault();
-//             details[i].classList.toggle('_open');
-//             console.log(
-//                 details[i].shadowRoot
-//             );
-//             details[i].shadowRoot.querySelector('#details-content')
-//             //   "content-visibility: hidden; display: block;";
+// const menuDetails = document.querySelectorAll(".menu__details");
+// // console.log(menuDetails);
+// if (menuDetails.length>0) {
+//   menuDetails.addEventListener("click", (e) => {
 
-          
-               
-
-//           });
-
-//     }
+//   })
 // }
 
 const burgerBtn = document.querySelector(".burger-btn");

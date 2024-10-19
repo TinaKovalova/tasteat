@@ -1134,14 +1134,33 @@ body:has(.burger-menu--active) {
           flex-grow: 1;
   padding-block: 2.1875rem;
 }
-.menu__details-block {
-  min-height: 3.15rem;
-  overflow: hidden;
-  -webkit-transition: all 0.8s ease-in-out;
-  transition: all 0.8s ease-in-out;
+@-webkit-keyframes showMenu {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
 }
-.menu__details-block[open] {
-  min-height: 39.6875rem;
+@keyframes showMenu {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+.menu__details-block[open] .menu-list > li {
+  -webkit-animation: showMenu 0.6s;
+          animation: showMenu 0.6s;
 }
 .menu__details-block:not(:last-child) {
   margin-bottom: 0.9375rem;
@@ -1152,9 +1171,41 @@ body:has(.burger-menu--active) {
   font-size: 2.25rem;
   line-height: 1.4;
   list-style-type: none;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.9375rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+@media (any-hover) {
+  .menu__details-block-title:hover {
+    color: #e1b168;
+  }
+  .menu__details-block-title:hover::before {
+    border-left-color: #e1b168;
+  }
 }
 .menu__details-block-title::-webkit-details-marker {
   display: none;
+}
+.menu__details-block-title::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
+  border-left: 0.8rem solid #292e36;
+  margin-top: 0.45em;
+  margin-left: 0.3em;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.menu__details-block[open] > .menu__details-block-title::before {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 .menu .section-header {
   -webkit-box-align: start;
@@ -1163,12 +1214,8 @@ body:has(.burger-menu--active) {
 }
 
 .menu-list {
+  overflow: hidden;
   padding-block: 2.5rem 3.75rem;
-  z-index: 0;
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 .menu-list__item:not(:last-child) {
   margin-bottom: 3.125rem;
