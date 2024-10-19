@@ -18,6 +18,7 @@ body {
     line-height: 1.5;
     letter-spacing: toRem(0.2);
     color: $grayColor;
+    scroll-behavior: smooth;
     &:has(.burger-menu--active) {
         overflow: hidden;
     }

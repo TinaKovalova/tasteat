@@ -113,6 +113,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.0125rem;
   color: #555;
+  scroll-behavior: smooth;
 }
 body:has(.burger-menu--active) {
   overflow: hidden;
@@ -568,7 +569,7 @@ body:has(.burger-menu--active) {
   background-color: rgba(41, 46, 54, 0.9);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  padding: 5rem 0 1.875rem 1.875rem;
+  padding: 7.1875rem 0 1.875rem 1.875rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -588,6 +589,12 @@ body:has(.burger-menu--active) {
           transform: translateY(-100%);
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+@media (max-width: 479.98px) {
+  .burger-menu {
+    -webkit-padding-before: 5rem;
+            padding-block-start: 5rem;
+  }
 }
 .burger-menu--active {
   -webkit-transform: translateY(0);
@@ -786,8 +793,57 @@ body:has(.burger-menu--active) {
      object-fit: cover;
 }
 
-.contacts__container {
-  padding-block: 6.25rem 3.75rem;
+@media (min-width: 86.25em) {
+  .contacts__container {
+    -webkit-padding-before: 6.25rem;
+            padding-block-start: 6.25rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 86.25em) {
+  @supports (padding-block-start: clamp( 3.125rem , 2.1816037736rem  +  4.7169811321vw , 6.25rem )) {
+    .contacts__container {
+      -webkit-padding-before: clamp( 3.125rem , 2.1816037736rem  +  4.7169811321vw , 6.25rem );
+              padding-block-start: clamp( 3.125rem , 2.1816037736rem  +  4.7169811321vw , 6.25rem );
+    }
+  }
+  @supports not (padding-block-start: clamp( 3.125rem , 2.1816037736rem  +  4.7169811321vw , 6.25rem )) {
+    .contacts__container {
+      -webkit-padding-before: calc(3.125rem + 3.125 * (100vw - 20rem) / 66.25);
+              padding-block-start: calc(3.125rem + 3.125 * (100vw - 20rem) / 66.25);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .contacts__container {
+    -webkit-padding-before: 3.125rem;
+            padding-block-start: 3.125rem;
+  }
+}
+@media (min-width: 86.25em) {
+  .contacts__container {
+    -webkit-padding-after: 3.75rem;
+            padding-block-end: 3.75rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 86.25em) {
+  @supports (padding-block-end: clamp( 3.125rem , 2.9363207547rem  +  0.9433962264vw , 3.75rem )) {
+    .contacts__container {
+      -webkit-padding-after: clamp( 3.125rem , 2.9363207547rem  +  0.9433962264vw , 3.75rem );
+              padding-block-end: clamp( 3.125rem , 2.9363207547rem  +  0.9433962264vw , 3.75rem );
+    }
+  }
+  @supports not (padding-block-end: clamp( 3.125rem , 2.9363207547rem  +  0.9433962264vw , 3.75rem )) {
+    .contacts__container {
+      -webkit-padding-after: calc(3.125rem + 0.625 * (100vw - 20rem) / 66.25);
+              padding-block-end: calc(3.125rem + 0.625 * (100vw - 20rem) / 66.25);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .contacts__container {
+    -webkit-padding-after: 3.125rem;
+            padding-block-end: 3.125rem;
+  }
 }
 .contacts__list {
   display: -webkit-box;
@@ -1134,6 +1190,11 @@ body:has(.burger-menu--active) {
           flex-grow: 1;
   padding-block: 2.1875rem;
 }
+@media (max-width: 767.98px) {
+  .menu__details {
+    padding-block: 0.3125rem;
+  }
+}
 @-webkit-keyframes showMenu {
   from {
     -webkit-transform: translateY(-100%);
@@ -1217,8 +1278,18 @@ body:has(.burger-menu--active) {
   overflow: hidden;
   padding-block: 2.5rem 3.75rem;
 }
+@media (max-width: 767.98px) {
+  .menu-list {
+    padding-block: 1.5625rem;
+  }
+}
 .menu-list__item:not(:last-child) {
   margin-bottom: 3.125rem;
+}
+@media (max-width: 767.98px) {
+  .menu-list__item:not(:last-child) {
+    margin-bottom: 1.5625rem;
+  }
 }
 
 .meal__link {

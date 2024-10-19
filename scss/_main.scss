@@ -128,7 +128,8 @@
     // .contacts__container
 
     &__container {
-        padding-block: toRem(100) toRem(60);
+        @include adaptiveValue("padding-block-start", 100, 50);
+        @include adaptiveValue("padding-block-end", 60, 50);
     }
 
     // .contacts__list
@@ -405,6 +406,9 @@
     &__details {
         flex-grow: 1;
         padding-block: toRem(35);
+        @media (max-width: $mobile) {
+            padding-block: toRem(5);
+        }
     }
 
     //menu__details-block
@@ -477,11 +481,17 @@
 .menu-list {
     overflow: hidden;
     padding-block: toRem(40) toRem(60);
+    @media (max-width: $mobile) {
+        padding-block: toRem(25);
+    }
 
     // .menu-list__item
 
     &__item:not(:last-child) {
         margin-bottom: toRem(50);
+        @media (max-width: $mobile) {
+            margin-bottom: toRem(25);
+        }
     }
 }
 .meal {
@@ -867,7 +877,6 @@
 
     &__product {
         flex: 0 0 toPercent(317.5, $maxWidthContainer);
-        // width: toPercent(317.5, $maxWidthContainer);
         min-width: toRem(280);
         min-height: toRem(307);
     }

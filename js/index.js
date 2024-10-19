@@ -1,21 +1,16 @@
 
 
-// const menuDetails = document.querySelectorAll(".menu__details");
-// // console.log(menuDetails);
-// if (menuDetails.length>0) {
-//   menuDetails.addEventListener("click", (e) => {
-
-//   })
-// }
-
 const burgerBtn = document.querySelector(".burger-btn");
 const burgerMenu = document.querySelector(".burger-menu");
+const nav = document.querySelector(".navigation");
+const header = document.querySelector(".header");
 const forms = document.forms;
 
 burgerBtn.addEventListener("click", (e) => {
   e.currentTarget.classList.toggle("burger-btn--active");
   burgerMenu.classList.toggle("burger-menu--active");
 });
+
 burgerMenu.addEventListener("click", (e) => {
   if (e.target.closest("[class$='__link']")) {
     burgerBtn.classList.toggle("burger-btn--active");
@@ -23,6 +18,20 @@ burgerMenu.addEventListener("click", (e) => {
   }
 });
 
+nav.addEventListener('click', (e) => {
+  const target = e.target;
+  if (target.closest(".navigation__link")) {
+    e.preventDefault();
+    const elementId = target.dataset.destination;
+    const step = window.innerWidth < 992 ? header.offsetHeight : 0;
+    const targetElementTop = document.querySelector(`#${elementId}`).offsetTop -step;
+     window.scrollTo({
+      top: targetElementTop,
+      left: 0,
+      behavior:"smooth"
+    })
+  }
+})
 
 const reservationForm = forms?.reservation;
 if (reservationForm) {
