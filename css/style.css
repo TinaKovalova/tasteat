@@ -1644,8 +1644,57 @@ body:has(.burger-menu--active) {
   }
 }
 
-.popular {
-  padding-block: 7.5rem 8.75rem;
+@media (min-width: 86.25em) {
+  .popular {
+    -webkit-padding-before: 7.5rem;
+            padding-block-start: 7.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 86.25em) {
+  @supports (padding-block-start: clamp( 3.125rem , 1.804245283rem  +  6.6037735849vw , 7.5rem )) {
+    .popular {
+      -webkit-padding-before: clamp( 3.125rem , 1.804245283rem  +  6.6037735849vw , 7.5rem );
+              padding-block-start: clamp( 3.125rem , 1.804245283rem  +  6.6037735849vw , 7.5rem );
+    }
+  }
+  @supports not (padding-block-start: clamp( 3.125rem , 1.804245283rem  +  6.6037735849vw , 7.5rem )) {
+    .popular {
+      -webkit-padding-before: calc(3.125rem + 4.375 * (100vw - 20rem) / 66.25);
+              padding-block-start: calc(3.125rem + 4.375 * (100vw - 20rem) / 66.25);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .popular {
+    -webkit-padding-before: 3.125rem;
+            padding-block-start: 3.125rem;
+  }
+}
+@media (min-width: 86.25em) {
+  .popular {
+    -webkit-padding-after: 8.75rem;
+            padding-block-end: 8.75rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 86.25em) {
+  @supports (padding-block-end: clamp( 3.125rem , 1.4268867925rem  +  8.4905660377vw , 8.75rem )) {
+    .popular {
+      -webkit-padding-after: clamp( 3.125rem , 1.4268867925rem  +  8.4905660377vw , 8.75rem );
+              padding-block-end: clamp( 3.125rem , 1.4268867925rem  +  8.4905660377vw , 8.75rem );
+    }
+  }
+  @supports not (padding-block-end: clamp( 3.125rem , 1.4268867925rem  +  8.4905660377vw , 8.75rem )) {
+    .popular {
+      -webkit-padding-after: calc(3.125rem + 5.625 * (100vw - 20rem) / 66.25);
+              padding-block-end: calc(3.125rem + 5.625 * (100vw - 20rem) / 66.25);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .popular {
+    -webkit-padding-after: 3.125rem;
+            padding-block-end: 3.125rem;
+  }
 }
 .popular__container {
   display: -webkit-box;
@@ -1697,17 +1746,32 @@ body:has(.burger-menu--active) {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 0.625rem;
+  gap: 0.625rem;
+}
+@media (max-width: 767.98px) and (min-width: 479.98px) {
+  .popular-product {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    min-height: 12.5rem;
+  }
 }
 @media (max-width: 767.98px) {
   .popular-product {
-    -webkit-box-flex: 0.7;
-        -ms-flex-positive: 0.7;
-            flex-grow: 0.7;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
 }
 .popular-product__img-block {
   width: 100%;
+}
+@media (max-width: 767.98px) and (min-width: 479.98px) {
+  .popular-product__img-block {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+    height: 13.75rem;
+  }
 }
 .popular-product__img-link {
   overflow: hidden;
@@ -1746,6 +1810,12 @@ body:has(.burger-menu--active) {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 0.625rem;
+}
+@media (max-width: 767.98px) and (min-width: 479.98px) {
+  .popular-product__info {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
 }
 .popular-product__info-header {
   font-family: "Cormorant Infant", serif;

@@ -830,7 +830,8 @@
 }
 
 .popular {
-    padding-block: toRem(120) toRem(140);
+    @include adaptiveValue("padding-block-start", 120, 50);
+    @include adaptiveValue("padding-block-end", 140, 50);
 
     // .popular__container
 
@@ -866,6 +867,7 @@
 
     &__product {
         flex: 0 0 toPercent(317.5, $maxWidthContainer);
+        // width: toPercent(317.5, $maxWidthContainer);
         min-width: toRem(280);
         min-height: toRem(307);
     }
@@ -874,15 +876,24 @@
 .popular-product {
     display: flex;
     flex-direction: column;
-    row-gap: toRem(10);
+    gap: toRem(10);
+
+    @media (max-width: $mobile) and (min-width: $smallMobile) {
+        flex-direction: row;
+
+        min-height: toRem(200);
+    }
     @media (max-width: $mobile) {
-        flex-grow: 0.7;
+        flex-basis: 100%;
     }
     // .popular-product__img-block
 
     &__img-block {
         width: 100%;
-        // aspect-ratio: 318 /307;
+        @media (max-width: $mobile) and (min-width: $smallMobile) {
+            flex-basis: 40%;
+            height: toRem(220);
+        }
     }
     //__img-link
     &__img-link {
@@ -914,6 +925,9 @@
         display: flex;
         flex-direction: column;
         row-gap: toRem(10);
+        @media (max-width: $mobile) and (min-width: $smallMobile) {
+            flex-basis: 50%;
+        }
     }
 
     // .popular-product__info-header
