@@ -251,7 +251,7 @@
     }
 }
 .up-btn {
-    visibility: hidden;
+    display: none;
     position: fixed;
     right: toRem(30);
     bottom: toRem(30);
@@ -267,6 +267,12 @@
     align-items: center;
     justify-content: center;
     transition: all 0.5s;
+    @media (max-width: $tablet) {
+        right: toRem(15);
+        bottom: toRem(15);
+        width: 1em;
+        height: 1em;
+    }
     @media (any-hover) {
         &:hover {
             color: $grayColor;

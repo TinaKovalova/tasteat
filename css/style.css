@@ -81,6 +81,11 @@ textarea {
           appearance: none;
 }
 
+html {
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
 input {
   -webkit-transition: all 5000s ease-in-out 0s;
   transition: all 5000s ease-in-out 0s;
@@ -420,7 +425,7 @@ body:has(.burger-menu--active) {
 }
 
 .up-btn {
-  visibility: hidden;
+  display: none;
   position: fixed;
   right: 1.875rem;
   bottom: 1.875rem;
@@ -445,6 +450,14 @@ body:has(.burger-menu--active) {
           justify-content: center;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+}
+@media (max-width: 991.98px) {
+  .up-btn {
+    right: 0.9375rem;
+    bottom: 0.9375rem;
+    width: 1em;
+    height: 1em;
+  }
 }
 @media (any-hover) {
   .up-btn:hover {

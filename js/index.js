@@ -6,9 +6,9 @@ const header = document.querySelector(".header");
 const forms = document.forms;
 
 window.addEventListener("scroll", () => {
-  document.documentElement.scrollTop > 20 
-    ? (upBtn.style.visibility = "visible")
-    : (upBtn.style.visibility = "hidden");
+  document.documentElement.scrollTop > 200
+    ? (upBtn.style.display= "flex")
+    : (upBtn.style.display= "none");
   
 })
 upBtn.addEventListener("click", () => {

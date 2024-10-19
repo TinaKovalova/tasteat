@@ -3,7 +3,9 @@
 @import "reset";
 @import "variables";
 @import "mixins";
-
+html {
+    transition-duration: 1s;
+}
 input {
     transition: all 5000s ease-in-out 0s;
     &::placeholder {
@@ -19,6 +21,7 @@ body {
     letter-spacing: toRem(0.2);
     color: $grayColor;
     scroll-behavior: smooth;
+
     &:has(.burger-menu--active) {
         overflow: hidden;
     }
