@@ -502,6 +502,13 @@
         display: flex;
         gap: toRem(20);
         align-items: center;
+        @media (any-hover) {
+            &:hover {
+                & .meal__details > .meal__title {
+                    text-shadow: #292e36 0px 0px 1px;
+                }
+            }
+        }
     }
 
     // .meal__image-block
@@ -544,6 +551,7 @@
         font-size: toRem(30);
         line-height: 1.4;
         color: $darkColor;
+        transition: text-shadow 0.3s;
     }
 
     // .meal__ingredients
@@ -1210,6 +1218,7 @@
         & .section-header__title {
             font-size: toRem(30);
             line-height: 1.3;
+            text-align: left;
         }
 
         // .section-header__text
