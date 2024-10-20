@@ -439,9 +439,6 @@ body:has(.burger-menu--active) {
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -451,7 +448,7 @@ body:has(.burger-menu--active) {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-@media (max-width: 991.98px) {
+@media (max-width: 767.98px) {
   .up-btn {
     right: 0.9375rem;
     bottom: 0.9375rem;

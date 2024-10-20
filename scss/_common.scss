@@ -263,11 +263,10 @@
     border: 2px solid $yellowColor;
     color: $yellowColor;
     transform: rotate(-90deg);
-    display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.5s;
-    @media (max-width: $tablet) {
+    @media (max-width: $mobile) {
         right: toRem(15);
         bottom: toRem(15);
         width: 1em;
